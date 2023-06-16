@@ -17,7 +17,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for APIGPT.CLOUD API
 ---
 
 # 生成式AI云服务文档
