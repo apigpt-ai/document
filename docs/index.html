@@ -323,10 +323,10 @@
                     <a href="#ai-2" class="toc-h2 toc-link" data-title="什么是生成式AI云">什么是生成式AI云</a>
                   </li>
                   <li>
-                    <a href="#696dc1301e" class="toc-h2 toc-link" data-title="配额和限制">配额和限制</a>
+                    <a href="#aigc" class="toc-h2 toc-link" data-title="目前已经支持的AIGC及详情">目前已经支持的AIGC及详情</a>
                   </li>
                   <li>
-                    <a href="#aigc" class="toc-h2 toc-link" data-title="AIGC模型">AIGC模型</a>
+                    <a href="#aigc-2" class="toc-h2 toc-link" data-title="AIGC模型">AIGC模型</a>
                   </li>
                   <li>
                     <a href="#bbfed2f2c3" class="toc-h2 toc-link" data-title="定价">定价</a>
@@ -373,10 +373,10 @@
       <div style="padding:60px">
 
       <img src="images/qrcode_for_apigpt-723fccb3.jpg" class="logo" alt="" />
-      <p style="color:grey">扫描关注生成式AI云公众号</p>
+      <p style="color:grey">扫描关注<br />生成式AI云公众号</p>
 
       <img src="images/apigpt-contact-e412e752.png" class="logo" alt="" />
-      <p style="color:grey">扫描加入生成式AI用户群</p>
+      <p style="color:grey">扫描加入<br />生成式AI用户群</p>
       </div>
 
     </div>
@@ -385,7 +385,71 @@
       <div class="content">
         <h1 id='ai'>生成式AI云服务文档</h1><h1 id='153042ed9e'>概述</h1><h2 id='ai-2'>什么是生成式AI云</h2>
 <p>生成式AI云（APIGPT.CLOUD）是一款生成式AI云服务，旨在为开发者提供一站式继承多个AIGC服务商API的服务。只需开通一个APIGPT.CLOUD账号，开发者即可访问包括OpenAI、Claude、Google Bard、APTGPT Stable Diffusion和百度文言一心在内的多项生成式AI服务API，轻松集成生成式AI能力到自己的应用中。让APIGPT.CLOUD成为您的生成式AI云服务，将极大地提高您的开发效率。</p>
-<h2 id='696dc1301e'>配额和限制</h2><h2 id='aigc'>AIGC模型</h2><h2 id='bbfed2f2c3'>定价</h2><h2 id='4258f4bdd7'>新增功能</h2><h1 id='25e54147de'>快速入门</h1><h2 id='openai-gpt-35-turbo'>OpenAI GPT-35-Turbo</h2><h2 id='openai-gpt-4'>OpenAI GPT-4</h2><h1 id='1ce80e2056'>操作说明</h1><h1 id='b6edf34dba'>教程</h1><h1 id='ai-3'>负责任的AI</h1><h1 id='a1880f698b'>参考</h1><h1 id='c5ca3950cb'>资源</h1><h1 id='cf68bca02a'>错误代码</h1>
+<h2 id='aigc'>目前已经支持的AIGC及详情</h2><h3 id='openai'>OpenAI系列</h3>
+<p>APIGPT的OpenAI是基于Azure OpenAI服务构建，如果您需要了解更详细的限制，可以参考<a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/' target="_blank">Azure OpenAI用户手册</a>了解更详细的内容。</p>
+
+<p>通过 APIGPT OpenAI 可使用很多不同模型，这些模型按系列和功能分组。 模型系列通常按其预期任务关联模型。 下表介绍了 Azure OpenAI 中当前可用的模型系列。 目前并非所有模型都可在所有区域中使用。</p>
+
+<p>APIGPT OpenAI支持的模型有下：</p>
+
+<table><thead>
+<tr>
+<th>模型</th>
+<th>模型ID</th>
+<th>最大请求值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ChatGPT</td>
+<td>gpt-35-turbo</td>
+<td>4096</td>
+<td>ChatGPT 模型 (gpt-35-turbo) 是一种专为对话接口设计的语言模型</td>
+</tr>
+<tr>
+<td>嵌入</td>
+<td>text-embedding-ada-002</td>
+<td>8191</td>
+<td>一组可以理解和使用嵌入的模型。 嵌入是一种特殊的数据表示格式，可由机器学习模型和算法轻松使用。 嵌入是一段文本的语义含义的信息密集表示。</td>
+</tr>
+<tr>
+<td>相似性嵌入</td>
+<td>text-similarity-ada-001 和 text-similarity-curie-001</td>
+<td>2046</td>
+<td>聚类分析、回归、异常情况检测、可视化</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>code-davinci-002</td>
+<td>8001</td>
+<td>Codex 模型是基模型 GPT-3 的子代，可以理解和生成代码。 它们的训练数据包含自然语言和来自 GitHub 的数十亿行公开代码。</td>
+</tr>
+<tr>
+<td>Ada</td>
+<td>text-ada-001</td>
+<td>2049</td>
+<td>Ada 通常是最快的模型，可以执行的任务有分析文本、地址更正和不需要太多细微差别的某些分类任务等等。 Ada 的性能通常可以通过提供更多上下文来改进。</td>
+</tr>
+<tr>
+<td>Babbage</td>
+<td>text-babbage-001</td>
+<td>2049</td>
+<td>Babbage 可以执行简单的分类等简单任务。 在语义搜索方面，它的功能也很强大，可对文档与搜索查询的匹配程度进行排名。</td>
+</tr>
+<tr>
+<td>Curie</td>
+<td>text-curie-001</td>
+<td>2049</td>
+<td>Curie 功能强大，但速度很快。 虽然 Davinci 在分析复杂文本方面更强大，但 Curie 可以执行许多精细化的任务，例如情绪分类和摘要。 Curie 也善于回答问题和执行问答，适合用作常规服务聊天机器人。</td>
+</tr>
+<tr>
+<td>Davinci</td>
+<td>text-davinci-003</td>
+<td>4097</td>
+<td>Davinci 是功能最强大的模型，可以执行其他模型能够执行的任何任务，并且所用的指令通常更少。 对于需要深入理解内容的应用程序（例如面向特定受众的摘要和创意内容的生成），Davinci 将产生最佳结果。 Davinci 提供的这些增加的功能需要更多计算资源，因此 Davinci 的成本更高，并且 Davinci 不如其他模型快。Davinci 擅长的另一个领域是理解文本的意图。 Davinci 擅长解决多种逻辑问题并解释字符动机。 Davinci 已经能够解决一些涉及因果关系的最具挑战性的 AI 问题。</td>
+</tr>
+</tbody></table>
+<h2 id='aigc-2'>AIGC模型</h2><h2 id='bbfed2f2c3'>定价</h2><h2 id='4258f4bdd7'>新增功能</h2><h1 id='25e54147de'>快速入门</h1><h2 id='openai-gpt-35-turbo'>OpenAI GPT-35-Turbo</h2><h2 id='openai-gpt-4'>OpenAI GPT-4</h2><h1 id='1ce80e2056'>操作说明</h1><h1 id='b6edf34dba'>教程</h1><h1 id='ai-3'>负责任的AI</h1><h1 id='a1880f698b'>参考</h1><h1 id='c5ca3950cb'>资源</h1><h1 id='cf68bca02a'>错误代码</h1>
 <aside class="notice">
 APIGPT APIs 使用下列的错误代码
 </aside>
