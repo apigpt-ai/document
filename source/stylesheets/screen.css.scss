@@ -284,10 +284,11 @@ html, body {
   font-weight: bold;
   overflow-x: auto;
   a {
+    border-top: 4px solid #222;
     display: inline;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 10px 20px;
     line-height: 30px;
     outline: 0;
 
@@ -297,6 +298,7 @@ html, body {
     }
 
     &.active {
+      border-top-color: #EE423D;
       background-color: $lang-select-active-bg;
       color: $lang-select-active-text;
     }
