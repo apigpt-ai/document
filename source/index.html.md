@@ -6,7 +6,7 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - python
 
 toc_footers:
-  - <a href='https://apigpt.cloud' target=='_blank'>访问生成式AI云官网</a>
+  -
 
 includes:
   - errors
@@ -79,13 +79,13 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 ## 创建App
 
-## 使用Playgroud来探索
+## 使用 Playgroud 来探索
 
-## 获得接入到第三方应用的Token
+## 获得接入到第三方应用的 Token
 
 ## 试用与充值
 
-# 03 - API文档
+# 03 - API 文档
 
 ## APIGPT OpenAI
 
@@ -211,7 +211,7 @@ print(completion.choices[0].message.content)
 
 待补充
 
-# 04 - 负责任的AI
+# 04 - 负责任的 AI
 
 ## 内容安全
 
