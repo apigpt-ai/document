@@ -6,7 +6,7 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - python
 
 toc_footers:
-  -
+  - <center><a href='https://apigpt.cloud'>访问 APIGPT.CLOUD</a></center>
 
 includes:
   - errors

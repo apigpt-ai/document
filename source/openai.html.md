@@ -6,7 +6,7 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - python
 
 toc_footers:
-  - <a href='index.html'>返回文档首页</a>
+  - <center><a href='index.html'>返回文档首页</a></center>
 
 includes:
   - errors
