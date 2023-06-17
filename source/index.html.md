@@ -1,5 +1,5 @@
 ---
-title: APIGPT.Cloud文档服务
+title: APIGPT.CLOUD 用户文档
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
@@ -34,6 +34,7 @@ meta:
 
 
 ## APIGPT OpenAI
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
 
 APIGPT 的 OpenAI 是基于 <a href='https://platform.openai.com/docs/models/gpt-4' target='_blank'>OpenAI 官方 GPT4</a> 和 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 服务构建。
 
@@ -49,9 +50,12 @@ Embeddings | text-embedding-ada-002 | 8191 | 一组可以理解和使用嵌入�
 Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可以理解和生成代码。 它们的训练数据包含自然语言和来自 GitHub 的数十亿行公开代码。
 
 ## APIGPT ClaudeAI
+<img src="https://apigpt.cloud/wp-content/uploads/2023/06/claudeai.png">
+
 APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'>Anthropic ClaudeAI</a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。它能一次处理最长长达9000个 Token 的内容。
 
 ## APIGPT BardAI
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png">
 
 <a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 LaMDA 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。
 
@@ -67,6 +71,7 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 
 ## APIGPT StableDiffusion
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3003.png">
 
 基于 AI 画图 <a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion 软件</a>，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
 
@@ -89,106 +94,9 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 ## APIGPT OpenAI
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
+在 APIGPT 中建立了一个 OpenAI App 后，你可以在你的应用程序中使用 OpenAI 的接口。
 
-### 介绍
-你可以通过任何语言的 HTTP 请求与 API 进行交互，可以使用OpenAI的官方 Python 绑定、官方 Node.js 库或其他社区维护的库。
-
-要安装官方 Python 绑定，请运行以下命令：
-
-
-`pip install openai`
-
-
-要安装官方 Node.js 库，请在你的 Node.js 项目目录中运行以下命令：
-
-`npm install openai`
-
-
-### 认证
-OpenAI API 使用 API 密钥进行身份验证。请访问你的 <a href=''>App 页面</a>，以获取你在请求中使用的 API 密钥。
-
-请记住，你的 API 密钥是一个秘密！不要与他人分享它，也不要在任何客户端代码（浏览器、应用程序）中公开它。生产请求必须通过你自己的后端服务器路由，你的 API 密钥可以从环境变量或密钥管理服务中安全加载。
-
-所有 API 请求都应该在 `API-KEY` HTTP 头中包含你的 API 密钥，如下所示：
-`api-key: <替换成从APIGPT.CLOUD创建的OpenAI APP Key>`
-
-
-### 发送请求
-你可以将下面的命令粘贴到终端中以运行你的第一个 API 请求。请确保将 <API_KEY> 替换为你的秘密 API 密钥。
-
-
-> 发送你的第一个 API 请求
-
-```shell
-## 发送请求 
-
-curl https://openai.pgpt.cloud/openai/deployments/gpt-35-turbo/chat/completions \
--H "Content-Type: application/json" \
--H "api-key: <API_KEY>" \
--d '{
- "messages": [{"role": "user", "content": "Say this message is from apigpt.cloud!"}],
- "temperature": 0.7
-}'
-
-```
-
-```python
-
-```
-
-这个请求查询了 gpt-3.5-turbo 模型，以完成以 "Say this message is from apigpt.cloud!" 为提示开始的文本。
-
-> 如果你会收到类下面JSON格式的数据响应，这说明你的请求成功了
-
-```json
-## 请求返回
-{
-    "id":"chatcmpl-7SKQgp3ry5w9ZB0A3mMcvYOFB1VYG",
-    "object":"chat.completion",
-    "created":1686986070,
-    "model":"gpt-35-turbo",
-    "choices":[
-        {
-            "index":0,
-            "finish_reason":"stop",
-            "message":{
-                "role":"assistant",
-                "content":"Hello, this message is from apigpt.cloud! How may I assist you today?"
-            }
-        }
-    ],
-    "usage":{
-        "completion_tokens":18,
-        "prompt_tokens":18,
-        "total_tokens":36
-    }
-}
-```
-
-
-我们可以看到 finish_reason 是 stop，这意味着 API 返回了模型生成的完整完成。在上面的请求中，我们只生成了一条消息，但是你可以设置 n 参数来生成多个消息选项。
-
-
-
-```python
-
-import openai
-openai.api_key = '<API_KEY>'
-openai.api_base = 'https://openai.pgpt.cloud'
-openai.api_type = 'azure'
-openai.api_version = 'version'
-engine = 'gpt-35-turbo'
-
-completion = openai.ChatCompletion.create(
-    engine=engine,
-    messages=[{"role": "user", "content": "Say this message is from apigpt.cloud!"}],
-)
-print(completion.choices[0].message.content)
-
-```
-
-
+<a href='openai.html'>阅读 APIGPT.CLOUD - OpenAI 开发文档 >></a>
 
 ## APIGPT ClaudeAI
 
