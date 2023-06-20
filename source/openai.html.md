@@ -134,8 +134,9 @@ print(completion.choices[0].message.content)
 role | `string` | `Required` | 消息作者的角色。其中之一是`system`、`user`、`assistant`或`function`。
 content | `string` | `Optional` | 消息的内容。除了带有函数调用的`assistant`，所有消息都需要 `content`。
 name | `string` | `Optional` | 此 `content` 作者的姓名。如果 `role` 是 `function`，则需要 `name`，并且应该是响应 `content` 的函数的名称。名称可以包含a-z、A-Z、0-9和下划线，最长长度为64个字符。
-function_call | `object` | `Optional` | 由模型生成的应调用的 `function` 的名称和参数。
+<!-- function_call | `object` | `Optional` | 由模型生成的应调用的 `function` 的名称和参数。-->
 
+<!--
 #### 参数 - functions `array` `Optional`
 
 模型可能为其生成JSON输入的函数列表。
@@ -145,24 +146,41 @@ function_call | `object` | `Optional` | 由模型生成的应调用的 `function
 name | `string` | `Required` | 要调用的函数的名称。名称必须是a-z、A-Z、0-9或包含下划线和破折号，并且最长长度为64个字符。
 description | `string` | `Optional` | 函数的描述，说明其功能。
 parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对象的形式描述。有关格式的文档，请参见指南中的示例和JSON Schema参考。
+-->
+
+#### 参数 - temperature `number` Optional Defaults to 1
+
+要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。
+通常建议修改其中一个参数，要么是采样温度，要么是top_p值，而不是两者同时修改。
 
 
+#### 参数 max_tokens `integer` Optional Defaults to inf
+
+在聊天补全中生成的最大令牌数。
+输入令牌和生成令牌的总长度受模型上下文长度的限制。
 
 
+#### 参数 stream `boolean` Optional Defaults to false
 
-
-
-
-
-
-
-
-
-
-
+如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
 
 
 
 # 04 Completions API
 
+
+
 # 05 Embeddings API
+获取给定输入的矢量表示，以便机器学习模型和算法可以轻松处理。
+
+## API - Create embeddings
+
+`POST https://openai.pgpt.cloud/openai/deployments/silu/embeddings`
+
+创建一个表示输入文本的嵌入向量。
+
+### Request body
+
+#### 参数 - model `str` Required
+
+要使用的模型的 ID，目前支持 text-embedding-ada-002
