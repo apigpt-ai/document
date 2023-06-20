@@ -52,9 +52,9 @@ OpenAI API 使用 API 密钥进行身份验证。请访问你的 <a href=''>App 
 > 发送你的第一个 API 请求
 
 ```shell
-curl https://openai.pgpt.cloud/openai/deployments/gpt-35-turbo/chat/completions \
+curl https://openai.pgpt.cloud/v1/chat/completions \
 -H "Content-Type: application/json" \
--H "api-key: <API_KEY>" \
+-H "Authorization: Bearer <API_KEY>" \
 -d '{
  "messages": [{"role": "user", "content": "Say this message is from apigpt.cloud!"}],
  "temperature": 0.7
@@ -66,9 +66,7 @@ curl https://openai.pgpt.cloud/openai/deployments/gpt-35-turbo/chat/completions 
 
 import openai
 openai.api_key = '<API_KEY>'
-openai.api_base = 'https://openai.pgpt.cloud'
-openai.api_type = 'azure'
-openai.api_version = 'version'
+openai.api_base = 'https://openai.pgpt.cloud/v1'
 engine = 'gpt-35-turbo'
 
 completion = openai.ChatCompletion.create(
@@ -117,7 +115,7 @@ print(completion.choices[0].message.content)
 
 ## API - Create chat completion
 
-`POST https://openai.pgpt.cloud/openai/deployments/gpt-35-turbo/chat/completions`
+`POST https://openai.pgpt.cloud/v1/chat/completions`
 
 为给定的聊天对话创建一个模型响应。
 
@@ -168,6 +166,31 @@ parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对�
 
 # 04 Completions API
 
+`POST https://openai.pgpt.cloud/v1/chat/completions`
+
+文本补全
+
+### Request body
+
+#### 参数 - prompt `string or array` Required
+
+要生成完成（completions）的提示语，可以使用字符串、字符串数组、令牌数组或令牌数组的数组进行编码。
+
+#### 参数 - temperature `number` Optional Defaults to 1
+
+要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。
+通常建议修改其中一个参数，要么是采样温度，要么是top_p值，而不是两者同时修改。
+
+
+#### 参数 max_tokens `integer` Optional Defaults to inf
+
+在文本补全中生成的最大令牌数。
+输入令牌和生成令牌的总长度受模型上下文长度的限制。
+
+
+#### 参数 stream `boolean` Optional Defaults to false
+
+如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
 
 
 # 05 Embeddings API
@@ -175,7 +198,7 @@ parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对�
 
 ## API - Create embeddings
 
-`POST https://openai.pgpt.cloud/openai/deployments/silu/embeddings`
+`POST https://openai.pgpt.cloud/v1/embeddings`
 
 创建一个表示输入文本的嵌入向量。
 
