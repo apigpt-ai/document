@@ -121,6 +121,59 @@ print(completion.choices[0].message.content)
 
 ### Request body
 
+> 请求示范
+
+```python
+import os
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_base = 'https://openai.pgpt.cloud/v1'
+
+completion = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Hello!"}
+  ]
+)
+print(completion.choices[0].message)
+```
+
+
+> 请求参数
+
+```json
+{
+  "model": "gpt-3.5-turbo",
+  "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "Hello!"}]
+}
+
+```
+
+> 返回
+
+```json
+{
+  "id": "chatcmpl-123",
+  "object": "chat.completion",
+  "created": 1677652288,
+  "choices": [{
+    "index": 0,
+    "message": {
+      "role": "assistant",
+      "content": "\n\nHello there, how may I assist you today?",
+    },
+    "finish_reason": "stop"
+  }],
+  "usage": {
+    "prompt_tokens": 9,
+    "completion_tokens": 12,
+    "total_tokens": 21
+  }
+}
+
+```
+
 #### 参数 - messages `array` Required
 
 到目前为止，对话包含的消息列表
@@ -129,27 +182,18 @@ print(completion.choices[0].message.content)
 
 参数 | 类型 | 是否必须 | 描述
 -----|------|----------|-------
-role | `string` | `Required` | 消息作者的角色。其中之一是`system`、`user`、`assistant`或`function`。
+role | `string` | `Required` | 消息作者的角色。其中之一是`system`、`user`、`assistant`。
 content | `string` | `Optional` | 消息的内容。除了带有函数调用的`assistant`，所有消息都需要 `content`。
-name | `string` | `Optional` | 此 `content` 作者的姓名。如果 `role` 是 `function`，则需要 `name`，并且应该是响应 `content` 的函数的名称。名称可以包含a-z、A-Z、0-9和下划线，最长长度为64个字符。
-<!-- function_call | `object` | `Optional` | 由模型生成的应调用的 `function` 的名称和参数。-->
+name | `string` | `Optional` | 此 `content` 作者的姓名。姓名可以包含a-z、A-Z、0-9和下划线，最长长度为64个字符。
 
-<!--
-#### 参数 - functions `array` `Optional`
-
-模型可能为其生成JSON输入的函数列表。
-
-参数 | 类型 | 是否必须 | 描述
------|------|----------|-------
-name | `string` | `Required` | 要调用的函数的名称。名称必须是a-z、A-Z、0-9或包含下划线和破折号，并且最长长度为64个字符。
-description | `string` | `Optional` | 函数的描述，说明其功能。
-parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对象的形式描述。有关格式的文档，请参见指南中的示例和JSON Schema参考。
--->
 
 #### 参数 - temperature `number` Optional Defaults to 1
 
 要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。
-通常建议修改其中一个参数，要么是采样温度，要么是top_p值，而不是两者同时修改。
+
+#### 参数 stream `boolean` Optional Defaults to false
+
+如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
 
 
 #### 参数 max_tokens `integer` Optional Defaults to inf
@@ -158,29 +202,78 @@ parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对�
 输入令牌和生成令牌的总长度受模型上下文长度的限制。
 
 
-#### 参数 stream `boolean` Optional Defaults to false
-
-如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
-
-
 
 # 04 Completions API
 
-`POST https://openai.pgpt.cloud/v1/chat/completions`
+根据提示，模型将返回一个或多个预测完成，并且还可以返回每个位置替代标记的概率。
 
-文本补全
+## API - Create completion
+
+`POST https://openai.pgpt.cloud/v1/completions`
 
 ### Request body
 
+> 请求示范
+
+```python
+import os
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_base = 'https://openai.pgpt.cloud/v1'
+openai.Completion.create(
+  model="gpt-3.5-turbo",
+  prompt="Say this is a test",
+  max_tokens=7,
+  temperature=0
+)
+```
+
+> 提交参数
+
+```json
+{
+  "model": "gpt-3.5-turbo",
+  "prompt": "Say this is a test",
+  "max_tokens": 7,
+  "temperature": 0,
+  "top_p": 1,
+  "n": 1,
+  "stream": false,
+  "logprobs": null,
+  "stop": "\n"
+}
+```
+
+> 服务器返回
+
+```json
+{
+  "id": "cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7",
+  "object": "text_completion",
+  "created": 1589478378,
+  "model": "gpt-3.5-turbo",
+  "choices": [
+    {
+      "text": "\n\nThis is indeed a test",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 7,
+    "total_tokens": 12
+  }
+}
+```
+
 #### 参数 - prompt `string or array` Required
 
-要生成完成（completions）的提示语，可以使用字符串、字符串数组、令牌数组或令牌数组的数组进行编码。
 
-#### 参数 - temperature `number` Optional Defaults to 1
+要为其生成完成（completions）的提示，可以以字符串、字符串数组、标记数组或标记数组的数组形式进行编码。
 
-要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。
-通常建议修改其中一个参数，要么是采样温度，要么是top_p值，而不是两者同时修改。
-
+请注意，在训练期间，模型所看到的文档分隔符为 "<|endoftext|>"
 
 #### 参数 max_tokens `integer` Optional Defaults to inf
 
@@ -188,12 +281,17 @@ parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对�
 输入令牌和生成令牌的总长度受模型上下文长度的限制。
 
 
+#### 参数 - temperature `number` Optional Defaults to 1
+
+要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。
+
 #### 参数 stream `boolean` Optional Defaults to false
 
 如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
 
 
 # 05 Embeddings API
+
 获取给定输入的矢量表示，以便机器学习模型和算法可以轻松处理。
 
 ## API - Create embeddings
@@ -204,6 +302,59 @@ parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对�
 
 ### Request body
 
+> 示范请求
+
+```python
+import os
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_base = 'https://openai.pgpt.cloud/v1'
+openai.Embedding.create(
+  model="text-embedding-ada-002",
+  input="The food was delicious and the waiter..."
+)
+```
+
+> 提交参数
+
+```json
+{
+  "model": "text-embedding-ada-002",
+  "input": "The food was delicious and the waiter..."
+}
+```
+
+> 服务器返回
+
+```json
+{
+  "object": "list",
+  "data": [
+    {
+      "object": "embedding",
+      "embedding": [
+        0.0023064255,
+        -0.009327292,
+        .... (1536 floats total for ada-002)
+        -0.0028842222,
+      ],
+      "index": 0
+    }
+  ],
+  "model": "text-embedding-ada-002",
+  "usage": {
+    "prompt_tokens": 8,
+    "total_tokens": 8
+  }
+}
+```
+
 #### 参数 - model `str` Required
 
 要使用的模型的 ID，目前支持 text-embedding-ada-002
+
+#### 参数 - input `string or array` `Required`
+
+要嵌入的输入文本，可以以字符串或标记数组的形式进行编码。要在单个请求中嵌入多个输入，请传递字符串数组或标记数组的数组。每个输入的标记数不能超过模型的最大输入标记数（对于text-embedding-ada-002模型，最大输入标记数为8191个）。
+
+
