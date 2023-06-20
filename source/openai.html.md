@@ -115,13 +115,51 @@ print(completion.choices[0].message.content)
 
 给定一个包含对话的消息列表，模型将返回一个响应。
 
-## Create chat completion
+## API - Create chat completion
 
 `POST https://openai.pgpt.cloud/openai/deployments/gpt-35-turbo/chat/completions`
 
 为给定的聊天对话创建一个模型响应。
 
 ### Request body
+
+#### 参数 - messages `array` Required
+
+到目前为止，对话包含的消息列表
+
+消息 `message` 的数据结构:
+
+参数 | 类型 | 是否必须 | 描述
+-----|------|----------|-------
+role | `string` | `Required` | 消息作者的角色。其中之一是`system`、`user`、`assistant`或`function`。
+content | `string` | `Optional` | 消息的内容。除了带有函数调用的`assistant`，所有消息都需要 `content`。
+name | `string` | `Optional` | 此 `content` 作者的姓名。如果 `role` 是 `function`，则需要 `name`，并且应该是响应 `content` 的函数的名称。名称可以包含a-z、A-Z、0-9和下划线，最长长度为64个字符。
+function_call | `object` | `Optional` | 由模型生成的应调用的 `function` 的名称和参数。
+
+#### 参数 - functions `array` `Optional`
+
+模型可能为其生成JSON输入的函数列表。
+
+参数 | 类型 | 是否必须 | 描述
+-----|------|----------|-------
+name | `string` | `Required` | 要调用的函数的名称。名称必须是a-z、A-Z、0-9或包含下划线和破折号，并且最长长度为64个字符。
+description | `string` | `Optional` | 函数的描述，说明其功能。
+parameters | `object` | `Optional` | 函数接受的参数，以JSON Schema对象的形式描述。有关格式的文档，请参见指南中的示例和JSON Schema参考。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
