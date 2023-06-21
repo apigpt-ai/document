@@ -33,6 +33,14 @@ meta:
 此外，基于开发者的需求，我们开发了具备内容生成、图像生成的<b> AGIEditor 编辑器组件</b>，方便开发者使用；还有集合了所有 AIGC 服务商接口的 <b>AIGCCLOUD PYPI 包</b>，Python 开发者只需要安装一次后即可调用上述 AIGC 服务商的接口。
 
 
+### 为什么应该选择 APIGPT.CLOUD
+和原 AIGC 官方的 API 相比，APIGPT 的 API 服务有以下优势：
+
+- 无前置审核流程，注册完成账号即可使用，充值方式简单且多样
+- 对官方接口进行了必要的优化和简化，让开发者使用更方便
+- 提供跨 AIGC 服务整合的能力，能让用户方便地使用最有方案
+- 提供及时的真人响应支持服务
+
 ## APIGPT OpenAI
 <img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
 
@@ -78,17 +86,33 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 # 02 - 快速入门
 
-您需要在<a href='' target='_blank'> APIGPT.CLOUD 官网</a>创建一个账号，无需审核，即拥有了方便访问各个 AIGC 服务 API 的权限。
+您需要在<a href='https://apigpt.cloud' target='_blank'> APIGPT.CLOUD 官网</a>创建一个账号，无需审核，即拥有了方便访问各个 AIGC 服务 API 的权限。
 
 ## 注册账号
+点击 <a href='https://apigpt.cloud' target='_blank'> APIGPT.CLOUD 官网</a> 右上角的“开始按钮”，即可进入注册流程。
+
+<img src='https://apigpt.cloud/wp-content/uploads/2023/05/1-1.png' />
+
+提交账号信息后进入到资料填写页面，在此处选择 APIGPT 服务，最后提交，无需审核，即可马上开通账号。
 
 ## 创建App
+注册成功后，点击后即可进入到控制面板，通过左侧菜单的 API Integration 即可通过创建 App 的方式获得 API Integration，新建一个 App 后点击提交，即可获得访问对应 AIGC 服务的 API Key。
 
-## 使用 Playgroud 来探索
+<img src='https://apigpt.cloud/wp-content/uploads/2023/05/2-1.png'>
+
 
 ## 获得接入到第三方应用的 Token
 
+获得上述 API Key 后，即可在各 AIGC App 中使用。
+
+<img src='https://apigpt.cloud/wp-content/uploads/2023/05/3-1.png' />
+
+APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于原 AIGC 官方 APII，可以无缝切换。
+
+
 ## 试用与充值
+
+默认注册后，我们都会免费赠送 5000 pts 额度供你使用，使用完毕后，您可以随时通过充值购买额度。
 
 # 03 - API 文档
 
