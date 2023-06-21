@@ -63,18 +63,16 @@ curl https://openai.pgpt.cloud/v1/chat/completions \
 
 ```python
 #你也可以用Python代码来发送第一个 API 请求
-
 import openai
 openai.api_key = '<API_KEY>'
 openai.api_base = 'https://openai.pgpt.cloud/v1'
-engine = 'gpt-35-turbo'
-
-completion = openai.ChatCompletion.create(
-    engine=engine,
-    messages=[{"role": "user", "content": "Say this message is from apigpt.cloud!"}],
+res = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Hello world"}],
+    temperature=1,
+    max_tokens=1000,
 )
-print(completion.choices[0].message.content)
-
+print(res)
 ```
 
 
@@ -109,7 +107,7 @@ print(completion.choices[0].message.content)
 
 我们可以在收到的请求里看到 finish_reason 是 stop，这意味着 API 返回了模型生成的完整完成。在上面的请求中，我们只生成了一条消息，但是你可以设置 n 参数来生成多个消息选项。
 
-# 03 Chat API
+# 03 Chat APIs
 
 给定一个包含对话的消息列表，模型将返回一个响应。
 
@@ -121,61 +119,64 @@ print(completion.choices[0].message.content)
 
 ### Request body
 
-> 请求示范
+> Create chat completion 请求示范
 
 ```python
-import os
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "<API_KEY>"
 openai.api_base = 'https://openai.pgpt.cloud/v1'
-
-completion = openai.ChatCompletion.create(
+res = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user", "content": "Hello!"}
   ]
 )
-print(completion.choices[0].message)
+print(res)
+```
+
+```shell
+curl https://openai.pgpt.cloud/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <API_KEY>" \
+-d '{
+ "messages": [{"role": "user", "content": "You are a helpful assistant."}],
+ "temperature": 0.7
+}'
 ```
 
 
-> 请求参数
+> Create chat completion 请求示范打印结果
 
 ```json
 {
-  "model": "gpt-3.5-turbo",
-  "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "Hello!"}]
+    "id":"chatcmpl-7Tl47vuq1rKS4XlcV7IihageYc514",
+    "object":"chat.completion",
+    "created":1687326787,
+    "model":"gpt-35-turbo",
+    "choices":[
+        {
+            "index":0,
+            "finish_reason":"stop",
+            "message":{
+                "role":"assistant",
+                "content":"Thank you! How may I assist you today?"
+            }
+        }
+    ],
+    "usage":{
+        "completion_tokens":10,
+        "prompt_tokens":14,
+        "total_tokens":24
+    }
 }
-
 ```
 
-> 返回
+#### 参数 - model `string` Required
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`
 
-```json
-{
-  "id": "chatcmpl-123",
-  "object": "chat.completion",
-  "created": 1677652288,
-  "choices": [{
-    "index": 0,
-    "message": {
-      "role": "assistant",
-      "content": "\n\nHello there, how may I assist you today?",
-    },
-    "finish_reason": "stop"
-  }],
-  "usage": {
-    "prompt_tokens": 9,
-    "completion_tokens": 12,
-    "total_tokens": 21
-  }
-}
-
-```
 
 #### 参数 - messages `array` Required
-
 到目前为止，对话包含的消息列表
 
 消息 `message` 的数据结构:
@@ -202,8 +203,12 @@ name | `string` | `Optional` | 此 `content` 作者的姓名。姓名可以包�
 输入令牌和生成令牌的总长度受模型上下文长度的限制。
 
 
+<aside class="notice">
+暂未支持 ChatGPT 官方的 function 调用特性及相关参数。
+此外为简化使用，官方 Create chat completion 函数下列可选参数也未被支持：top_p, n, stop, presence_penalty, frequency_penalty, logit_bias, user, 如您需要，请通过左方二维码联系我们
+</aside>
 
-# 04 Completions API
+# 04 Completions APIs
 
 根据提示，模型将返回一个或多个预测完成，并且还可以返回每个位置替代标记的概率。
 
@@ -213,64 +218,61 @@ name | `string` | `Optional` | 此 `content` 作者的姓名。姓名可以包�
 
 ### Request body
 
-> 请求示范
+> Create completion 请求示范
 
 ```python
-import os
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = '<API_KEY>'
 openai.api_base = 'https://openai.pgpt.cloud/v1'
-openai.Completion.create(
+res = openai.Completion.create(
   model="gpt-3.5-turbo",
-  prompt="Say this is a test",
+  prompt="I am a",
   max_tokens=7,
   temperature=0
 )
+print(res)
 ```
 
-> 提交参数
+```shell
+curl https://openai.pgpt.cloud/v1/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <APK_KEY>" \
+-d '{
+    "model": "gpt-3.5-turbo",
+    "prompt": "I am a",
+    "max_tokens": 7,
+    "temperature": 0
+  }'
+```
+
+> Create completion 请求示范打印结果
 
 ```json
 {
-  "model": "gpt-3.5-turbo",
-  "prompt": "Say this is a test",
-  "max_tokens": 7,
-  "temperature": 0,
-  "top_p": 1,
-  "n": 1,
-  "stream": false,
-  "logprobs": null,
-  "stop": "\n"
-}
-```
-
-> 服务器返回
-
-```json
-{
-  "id": "cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7",
+  "id": "cmpl-7TkgRTfjrz80goegsOC2nrkzi1WPm",
   "object": "text_completion",
-  "created": 1589478378,
-  "model": "gpt-3.5-turbo",
+  "created": 1687325319,
+  "model": "gpt-35-turbo",
   "choices": [
     {
-      "text": "\n\nThis is indeed a test",
+      "text": " 20 year old female and I",
       "index": 0,
-      "logprobs": null,
-      "finish_reason": "length"
+      "finish_reason": "length",
+      "logprobs": null
     }
   ],
   "usage": {
-    "prompt_tokens": 5,
     "completion_tokens": 7,
-    "total_tokens": 12
+    "prompt_tokens": 3,
+    "total_tokens": 10
   }
 }
 ```
 
+#### 参数 - model `string` Required
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`
+
 #### 参数 - prompt `string or array` Required
-
-
 要为其生成完成（completions）的提示，可以以字符串、字符串数组、标记数组或标记数组的数组形式进行编码。
 
 请注意，在训练期间，模型所看到的文档分隔符为 "<|endoftext|>"
@@ -290,7 +292,11 @@ openai.Completion.create(
 如果设置了此选项，将发送部分消息增量，就像在 ChatGPT 中一样。令牌将作为数据类型的服务器发送的事件逐步发送，一旦可用，流将以 data: [DONE] 消息终止。
 
 
-# 05 Embeddings API
+<aside class="notice">
+为简化使用，官方 Create completion 函数下列可选参数也未被支持：suffix, top_p, n, logprobs, echo, stop, presence_penalty, frequency_penalty, best_of, logit_bias, user。如您需要，请通过左方二维码联系我们
+</aside>
+
+# 05 Embeddings APIs
 
 获取给定输入的矢量表示，以便机器学习模型和算法可以轻松处理。
 
@@ -302,29 +308,30 @@ openai.Completion.create(
 
 ### Request body
 
-> 示范请求
+> Create embeddings 示范请求
 
 ```python
-import os
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = '<API_KEY>'
 openai.api_base = 'https://openai.pgpt.cloud/v1'
-openai.Embedding.create(
+res = openai.Embedding.create(
   model="text-embedding-ada-002",
   input="The food was delicious and the waiter..."
 )
+print(res)
 ```
 
-> 提交参数
-
-```json
-{
-  "model": "text-embedding-ada-002",
-  "input": "The food was delicious and the waiter..."
-}
+```shell
+curl https://openai.pgpt.cloud/v1/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <API_KEY>" \
+-d '{
+    "input": "The food was delicious and the waiter...",
+    "model": "text-embedding-ada-002"
+  }'
 ```
 
-> 服务器返回
+> Create embeddings 示范请求打印结果
 
 ```json
 {
@@ -349,12 +356,40 @@ openai.Embedding.create(
 }
 ```
 
-#### 参数 - model `str` Required
-
-要使用的模型的 ID，目前支持 text-embedding-ada-002
+#### 参数 - model `string` Required
+要使用的模型ID。目前我们支持并推荐用 `text-embedding-ada-002`
 
 #### 参数 - input `string or array` `Required`
-
 要嵌入的输入文本，可以以字符串或标记数组的形式进行编码。要在单个请求中嵌入多个输入，请传递字符串数组或标记数组的数组。每个输入的标记数不能超过模型的最大输入标记数（对于text-embedding-ada-002模型，最大输入标记数为8191个）。
 
+<aside class="notice">
+为简化使用，官方 Create embeddings 函数下列可选参数也未被支持：user, 如您需要，请通过左方二维码联系我们
+</aside>
 
+# 06 其他 APIs
+
+`ChatGPT 官方`支持的其他 API 支持情况如下，如果你有需要，请扫描左方二维码来联系我们。
+
+## Fine-tunes
+
+在规划中
+
+## Edits
+
+暂未支持
+
+## Images
+
+暂未支持
+
+## Audio
+
+暂未支持
+
+## Files
+
+暂未支持
+
+## Moderations
+
+暂未支持
