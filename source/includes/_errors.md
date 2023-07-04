@@ -8,14 +8,14 @@ APIGPT APIs 使用下列的错误代码
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+400 | Invalid request: there was an issue with the format or content of your request.
+401 | Unauthorized: there's an issue with your API key.
+403 | Forbidden: your API key does not have permission to use the specified resource.
+404 | Not found: the requested resource was not found.
+429 | Your account has hit a rate limit.
+500 | An unexpected error has occurred internal to Anthropic's systems.
+529 | Your API is temporarily overloaded.
+
+When receiving a streaming response via SSE, it's possible that an error can occur after returning a 200 response, in which case error handling wouldn't follow these standard mechanisms.
+
+

@@ -27,7 +27,7 @@ meta:
 # 01 - 关于APIGPT
 
 ## 服务介绍
-生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>百度文言一心</b>、<b>阿里通义大模型</b>和<b> APTGPT 自行构建的 Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。
+生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。
 
 此外，基于开发者的需求，我们开发了具备内容生成、图像生成的<b> AGIEditor 编辑器组件</b>，方便开发者使用；还有集合了所有 AIGC 服务商接口的 <b>AIGCCLOUD PYPI 包</b>，Python 开发者只需要安装一次后即可调用上述 AIGC 服务商的接口。
 
@@ -70,9 +70,9 @@ APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于�
 
 ## 试用与充值
 
-默认注册后，我们都会免费赠送 5000 pts 额度供你使用，使用完毕后，您可以随时通过充值购买额度。
+默认注册后，我们都会免费赠送 5000P 额度供你使用，使用完毕后，您可以随时通过充值购买额度。
 
-# 03 - API 文档
+# 03 - AIGC API 文档
 
 ## APIGPT OpenAI
 
@@ -102,8 +102,9 @@ Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可
 
 APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'>Anthropic ClaudeAI</a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。它能一次处理最长长达9000个 Token 的内容。
 
+在 APIGPT 中建立了一个 ClaudeAI App 后，你可以在你的应用程序中使用 ClaudeAI 的接口。
 
-<a href='#'>APIGPT.CLOUD - Claude 接口在完善中... >></a>
+<a href='claudeai.html'>阅读 APIGPT.CLOUD - ClaudeAI 开发文档 >></a>
 
 ## APIGPT BardAI
 
@@ -124,23 +125,29 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 基于 AI 画图 <a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion 软件</a>，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
 
 
-<a href='#'>APIGPT.CLOUD - StableDiffusion 接口在完善中... >></a>
+在 APIGPT 中建立了一个 SDAI App 后，你可以在你的应用程序中使用 SDAI 的接口。
+
+<a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
+
+## APIGPT ChatGLM
 
 
-## APIGPT 百度文言一心
+<img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png">
 
-待补充
+ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进行了优化。经过约1T标识符的中英双语训练，结合监督微调、反馈自助、人类反馈强化学习等技术的加持，拥有62亿参数的 ChatGLM-6B 已经能够生成与人类偏好相当符合的回答。
 
-## APIGPT 阿里通义大模型
+在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。
 
-待补充
 
-# 04 - 负责任的 AI
+<a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 >></a>
+
+# 04 - AIGC Chat 文档
+
+# 05 - 负责任的 AIGC
 
 ## 内容安全
 
 ## 隐私保护
 
-# 05 - 参考
 
 # 06 - 资源
