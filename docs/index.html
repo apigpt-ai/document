@@ -345,7 +345,7 @@
               </ul>
           </li>
           <li>
-            <a href="#03-api" class="toc-h1 toc-link" data-title="03 - API 文档">03 - API 文档</a>
+            <a href="#03-aigc-api" class="toc-h1 toc-link" data-title="03 - AIGC API 文档">03 - AIGC API 文档</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#apigpt-openai" class="toc-h2 toc-link" data-title="APIGPT OpenAI">APIGPT OpenAI</a>
@@ -360,15 +360,15 @@
                     <a href="#apigpt-stablediffusion" class="toc-h2 toc-link" data-title="APIGPT StableDiffusion">APIGPT StableDiffusion</a>
                   </li>
                   <li>
-                    <a href="#apigpt-2" class="toc-h2 toc-link" data-title="APIGPT 百度文言一心">APIGPT 百度文言一心</a>
-                  </li>
-                  <li>
-                    <a href="#apigpt-3" class="toc-h2 toc-link" data-title="APIGPT 阿里通义大模型">APIGPT 阿里通义大模型</a>
+                    <a href="#apigpt-chatglm" class="toc-h2 toc-link" data-title="APIGPT ChatGLM">APIGPT ChatGLM</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#04-ai" class="toc-h1 toc-link" data-title="04 - 负责任的 AI">04 - 负责任的 AI</a>
+            <a href="#04-aigc-chat" class="toc-h1 toc-link" data-title="04 - AIGC Chat 文档">04 - AIGC Chat 文档</a>
+          </li>
+          <li>
+            <a href="#05-aigc" class="toc-h1 toc-link" data-title="05 - 负责任的 AIGC">05 - 负责任的 AIGC</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#29fb150481" class="toc-h2 toc-link" data-title="内容安全">内容安全</a>
@@ -377,9 +377,6 @@
                     <a href="#3a43b2a76a" class="toc-h2 toc-link" data-title="隐私保护">隐私保护</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#05" class="toc-h1 toc-link" data-title="05 - 参考">05 - 参考</a>
           </li>
           <li>
             <a href="#06" class="toc-h1 toc-link" data-title="06 - 资源">06 - 资源</a>
@@ -406,7 +403,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='ai-apigpt-cloud'>生成式 AI 云（APIGPT.CLOUD）用户手册</h1><h1 id='01-apigpt'>01 - 关于APIGPT</h1><h2 id='73a298c445'>服务介绍</h2>
-<p>生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>百度文言一心</b>、<b>阿里通义大模型</b>和<b> APTGPT 自行构建的 Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。</p>
+<p>生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。</p>
 
 <p>此外，基于开发者的需求，我们开发了具备内容生成、图像生成的<b> AGIEditor 编辑器组件</b>，方便开发者使用；还有集合了所有 AIGC 服务商接口的 <b>AIGCCLOUD PYPI 包</b>，Python 开发者只需要安装一次后即可调用上述 AIGC 服务商的接口。</p>
 <h2 id='apigpt'>为什么应该选择 APIGPT</h2>
@@ -437,8 +434,8 @@
 
 <p>APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于原 AIGC 官方 APII，可以无缝切换。</p>
 <h2 id='d8b8637e42'>试用与充值</h2>
-<p>默认注册后，我们都会免费赠送 5000 pts 额度供你使用，使用完毕后，您可以随时通过充值购买额度。</p>
-<h1 id='03-api'>03 - API 文档</h1><h2 id='apigpt-openai'>APIGPT OpenAI</h2>
+<p>默认注册后，我们都会免费赠送 5000P 额度供你使用，使用完毕后，您可以随时通过充值购买额度。</p>
+<h1 id='03-aigc-api'>03 - AIGC API 文档</h1><h2 id='apigpt-openai'>APIGPT OpenAI</h2>
 <p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png"></p>
 
 <p>APIGPT 的 OpenAI 是基于 <a href='https://platform.openai.com/docs/models/gpt-4' target='_blank'>OpenAI 官方 GPT4</a> 和 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 服务构建。</p>
@@ -468,6 +465,12 @@
 <td>ChatGPT 模型 (gpt-35-turbo) 是一种专为对话接口设计的语言模型</td>
 </tr>
 <tr>
+<td>GPT-3.5</td>
+<td>gpt-35-turbo-16k</td>
+<td>16k</td>
+<td>ChatGPT 模型 (gpt-35-turbo-16k) 是gpt-35-turbo的增强版，可以支持高达16k的 Token输入</td>
+</tr>
+<tr>
 <td>Embeddings</td>
 <td>text-embedding-ada-002</td>
 <td>8191</td>
@@ -489,7 +492,9 @@
 
 <p>APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'>Anthropic ClaudeAI</a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。它能一次处理最长长达9000个 Token 的内容。</p>
 
-<p><a href='#'>APIGPT.CLOUD - Claude 接口在完善中... &gt;&gt;</a></p>
+<p>在 APIGPT 中建立了一个 ClaudeAI App 后，你可以在你的应用程序中使用 ClaudeAI 的接口。</p>
+
+<p><a href='claudeai.html'>阅读 APIGPT.CLOUD - ClaudeAI 开发文档 &gt;&gt;</a></p>
 <h2 id='apigpt-bardai'>APIGPT BardAI</h2>
 <p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png"></p>
 
@@ -503,12 +508,18 @@
 
 <p>基于 AI 画图 <a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion 软件</a>，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。</p>
 
-<p><a href='#'>APIGPT.CLOUD - StableDiffusion 接口在完善中... &gt;&gt;</a></p>
-<h2 id='apigpt-2'>APIGPT 百度文言一心</h2>
-<p>待补充</p>
-<h2 id='apigpt-3'>APIGPT 阿里通义大模型</h2>
-<p>待补充</p>
-<h1 id='04-ai'>04 - 负责任的 AI</h1><h2 id='29fb150481'>内容安全</h2><h2 id='3a43b2a76a'>隐私保护</h2><h1 id='05'>05 - 参考</h1><h1 id='06'>06 - 资源</h1><h1 id='cf68bca02a'>错误代码</h1>
+<p>在 APIGPT 中建立了一个 SDAI App 后，你可以在你的应用程序中使用 SDAI 的接口。</p>
+
+<p><a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 &gt;&gt;</a></p>
+<h2 id='apigpt-chatglm'>APIGPT ChatGLM</h2>
+<p><img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png"></p>
+
+<p>ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进行了优化。经过约1T标识符的中英双语训练，结合监督微调、反馈自助、人类反馈强化学习等技术的加持，拥有62亿参数的 ChatGLM-6B 已经能够生成与人类偏好相当符合的回答。</p>
+
+<p>在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。</p>
+
+<p><a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 &gt;&gt;</a></p>
+<h1 id='04-aigc-chat'>04 - AIGC Chat 文档</h1><h1 id='05-aigc'>05 - 负责任的 AIGC</h1><h2 id='29fb150481'>内容安全</h2><h2 id='3a43b2a76a'>隐私保护</h2><h1 id='06'>06 - 资源</h1><h1 id='cf68bca02a'>错误代码</h1>
 <aside class="notice">
 APIGPT APIs 使用下列的错误代码
 </aside>
@@ -521,49 +532,35 @@ APIGPT APIs 使用下列的错误代码
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>Invalid request: there was an issue with the format or content of your request.</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Unauthorized: there&#39;s an issue with your API key.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden: your API key does not have permission to use the specified resource.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>Not found: the requested resource was not found.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Your account has hit a rate limit.</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>An unexpected error has occurred internal to Anthropic&#39;s systems.</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>529</td>
+<td>Your API is temporarily overloaded.</td>
 </tr>
 </tbody></table>
+
+<p>When receiving a streaming response via SSE, it&#39;s possible that an error can occur after returning a 200 response, in which case error handling wouldn&#39;t follow these standard mechanisms.</p>
 
       </div>
       <div class="dark-box">
