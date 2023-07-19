@@ -97,7 +97,7 @@ curl https://sd.pgpt.cloud/v1/chat/completions \
 
 ```json
 {
-'urls': ['https://... image_url1 ...', 'https://... image_url2 ...',],
+'urls': ['https://... image_url1 ...', 'https://... image_url2 ...'],
 'object': 'draw',
 'prompt': 'cat',
 'model': 'stable_diffusion_2_1',

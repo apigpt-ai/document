@@ -49,7 +49,7 @@ meta:
 ## 注册账号
 点击 <a href='https://apigpt.cloud' target='_blank'> APIGPT.CLOUD 官网</a> 右上角的“开始按钮”，即可进入注册流程。
 
-<img src='https://apigpt.cloud/wp-content/uploads/2023/05/1-1.png' />
+<img src='https://apigpt.cloud/wp-content/uploads/2023/07/apply-for-apigpt.png' />
 
 提交账号信息后进入到资料填写页面，在此处选择 APIGPT 服务，最后提交，无需审核，即可马上开通账号。
 
