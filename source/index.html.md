@@ -123,15 +123,16 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3003.png">
 
-基于 AI 画图 <a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion 软件</a>，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
+基于 AI 的<a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是一种潜在扩散模型（Latent Diffusion Model），能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
+
+而现在对于很多开发者而言，如何快速获得一个可以立即上手的 Stable Diffusion 环境是最大的门槛，基于此，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
 
 
-在 APIGPT 中建立了一个 SDAI App 后，你可以在你的应用程序中使用 SDAI 的接口。
+你只需要在 APIGPT 中建立了一个 SDAI App 后，就可以在你的应用程序中使用 SDAI 的接口。
 
 <a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
 
 ## APIGPT ChatGLM
-
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png">
 
