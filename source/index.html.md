@@ -101,11 +101,45 @@ Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/06/claudeai.png">
 
-APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'>Anthropic ClaudeAI</a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。它能一次处理最长长达9000个 Token 的内容。
+APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'> Anthropic Claude </a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。我们目前提供两个系列的模型，它们都支持100000个令牌上下文窗口：
+
+APIGPT ClaudeAI 目前支持的模型包括并不限于下列：
+
+家族 | 最新主要版本 | 最新完整版本 | 描述
+--------- | ------- | ----------- | -----------
+Claude Instant | claude-instant-1 | claude-instant-1.2 | 低延迟、高吞吐量
+Claude | claude-2 | claude-2.0 | 在需要复杂推理的任务上表现出色
+
 
 在 APIGPT 中建立了一个 ClaudeAI App 后，你可以在你的应用程序中使用 ClaudeAI 的接口。
 
 <a href='claudeai.html'>阅读 APIGPT.CLOUD - ClaudeAI 开发文档 >></a>
+
+## APIGPT ChatGLM
+
+<img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png">
+
+ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进行了优化。经过约1T标识符的中英双语训练，结合监督微调、反馈自助、人类反馈强化学习等技术的加持，拥有62亿参数的 ChatGLM-6B 已经能够生成与人类偏好相当符合的回答。
+
+在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。
+
+
+<a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 >></a>
+
+
+## APIGPT StableDiffusion
+
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/SD.png">
+
+基于 AI 的<a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是一种潜在扩散模型（Latent Diffusion Model），能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
+
+而现在对于很多开发者而言，如何快速获得一个可以立即上手的 Stable Diffusion 环境是最大的门槛，基于此，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
+
+
+你只需要在 APIGPT 中建立了一个 SDAI App 后，就可以在你的应用程序中使用 SDAI 的接口。
+
+<a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
+
 
 ## APIGPT BardAI
 
@@ -118,30 +152,7 @@ APIGPT 基于 Google BardAI 构建了 API 服务。
 
 <a href='#'>APIGPT.CLOUD - BardAI 接口在完善中... >></a>
 
-## APIGPT StableDiffusion
 
-
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3003.png">
-
-基于 AI 的<a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是一种潜在扩散模型（Latent Diffusion Model），能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
-
-而现在对于很多开发者而言，如何快速获得一个可以立即上手的 Stable Diffusion 环境是最大的门槛，基于此，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
-
-
-你只需要在 APIGPT 中建立了一个 SDAI App 后，就可以在你的应用程序中使用 SDAI 的接口。
-
-<a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
-
-## APIGPT ChatGLM
-
-<img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png">
-
-ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进行了优化。经过约1T标识符的中英双语训练，结合监督微调、反馈自助、人类反馈强化学习等技术的加持，拥有62亿参数的 ChatGLM-6B 已经能够生成与人类偏好相当符合的回答。
-
-在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。
-
-
-<a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 >></a>
 
 # 04 - AIGC Chat 文档
 

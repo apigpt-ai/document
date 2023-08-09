@@ -330,7 +330,10 @@
             <a href="#04" class="toc-h1 toc-link" data-title="04 事件">04 事件</a>
           </li>
           <li>
-            <a href="#05-completions-api" class="toc-h1 toc-link" data-title="05 Completions API">05 Completions API</a>
+            <a href="#05" class="toc-h1 toc-link" data-title="05 模型">05 模型</a>
+          </li>
+          <li>
+            <a href="#06-completions-api" class="toc-h1 toc-link" data-title="06 Completions API">06 Completions API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#api-create-a-completion" class="toc-h2 toc-link" data-title="API - Create a completion">API - Create a completion</a>
@@ -471,37 +474,27 @@ data: {"completion": " Hello", "stop_reason": null, "model": "claude-1.3"}
 
 event: error
 data: {"error": {"type": "overloaded_error", "message": "Overloaded"}}
-</code></pre></div><h1 id='05-completions-api'>05 Completions API</h1>
+</code></pre></div><h1 id='05'>05 模型</h1>
+<p>我们目前提供两个模型系列，两者都支持10万个标记的上下文窗口：</p>
+
+<ul>
+<li>Claude-instant：低延迟，高吞吐量</li>
+<li>Claude：在需要复杂推理的任务中表现出色</li>
+</ul>
+
+<p>在向我们的 Completions API 发送请求时，您必须使用模型参数指定要执行完成的模型。我们建议您指定最新的主要版本，这样您将在发布更新时自动获得模型的更新。或者，如果您依赖于精确的输出形状，您可以指定完整的模型版本。</p>
+
+<p>有关模型更多详细信息，请参见<a href='/index.html#apigpt-claudeai'>模型</a>。</p>
+<h1 id='06-completions-api'>06 Completions API</h1>
 <p>ClaudeAI 目前只有一个补全API</p>
 <h2 id='api-create-a-completion'>API - Create a completion</h2>
 <p><code>POST https://claude.pgpt.cloud/v1/complete</code></p>
 
 <p>创建一个补全</p>
 <h3 id='request-body'>Request body</h3><h4 id='model-string-required'>参数 - model <code>string</code> Required</h4>
-<p>将完成您提示的模型。</p>
+<p>将会完成您的提示的模型。</p>
 
-<p>随着我们不断改进Claude，我们会开发新版本的Claude供您查询。这控制了哪个版本的Claude回答您的请求。现在我们提供两个模型系列：Claude和Claude Instant。</p>
-
-<p>指定以下任何一个模型，都将自动切换到最新的兼容模型：</p>
-
-<ul>
-<li>&quot;claude-1&quot;: 我们的最大模型，适用于各种更复杂的任务。</li>
-<li>&quot;claude-1-100k&quot;: 一个增强版的claude-1，具有10万个标记（大约75,000个单词）的上下文窗口。非常适合于对长文档和对话进行摘要、分析和查询，以获得对复杂主题和跨非常长文本范围内的关系的细致理解。</li>
-<li>&quot;claude-instant-1&quot;: 一个更小的模型，具有远低于最新claude-1模型的延迟，大约每秒采样40个单词！它的输出质量比最新的claude-1模型略低，特别是对于复杂的任务。然而，它的价格便宜得多，速度非常快。我们相信，这个模型在一系列任务上提供了足够的性能，包括文本分类、摘要和轻量级聊天应用，以及搜索结果摘要。</li>
-<li>&quot;claude-instant-1-100k&quot;: 一个增强版的claude-instant-1，具有10万个标记的上下文窗口，保持了其性能。非常适合需要速度和额外上下文的高吞吐量用例，从长时间对话和文档中获得更深入的理解。</li>
-</ul>
-
-<p><code>您也可以选择上述模型的特定子版本：</code></p>
-
-<ul>
-<li>&quot;claude-1.3&quot;: 与claude-1.2相比，它对于来自红队的输入更加强大，更擅长精确的指令跟随，更擅长处理代码和非英语对话和写作。</li>
-<li>&quot;claude-1.3-100k&quot;: 一个增强版的claude-1.3，具有10万个标记（大约7.5万个单词）的上下文窗口。</li>
-<li>&quot;claude-1.2&quot;: 一个改进版的claude-1。它在一般的帮助性、指令跟随、编码和其他任务方面略有改善。它在处理非英语语言方面也有相当大的进步。此模型还具有更一致地（以无害的方式）扮演角色的能力，并且默认情况下会写出略长且更详尽的回复。</li>
-<li>&quot;claude-1.0&quot;: claude-1的早期版本。</li>
-<li>&quot;claude-instant-1.1&quot;: 我们的最新版claude-instant-1。它在许多任务上比claude-instant-1.0更好，包括写作、编码和指令跟随。它在学术基准测试中表现更好，包括数学、阅读理解和编码测试。它还对来自红队的输入更加强大。</li>
-<li>&quot;claude-instant-1.1-100k&quot;: 一个增强版的claude-instant-1.1，具有10万个标记的上下文窗口，同时保持其每秒40个单词的闪电般的快速性能。</li>
-<li>&quot;claude-instant-1.0&quot;: claude-instant-1的早期版本。</li>
-</ul>
+<p>随着我们改进 Claude，我们会开发新的版本供您查询。这个参数控制着 Claude 回答您请求的版本。目前我们提供两个模型系列：Claude 和 Claude-instant。您可以通过将模型设置为“claude-2”或“claude-instant-1”来使用它们。有关更多详细信息，请参见<a href='/index.html#apigpt-claudeai'>模型</a>。</p>
 <h4 id='prompt-blob-required'>参数 - prompt <code>blob</code> Required</h4>
 <p>您想让Claude完成的提示。</p>
 
