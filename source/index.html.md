@@ -27,7 +27,7 @@ meta:
 # 01 - 关于APIGPT
 
 ## 服务介绍
-生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。
+生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google PaLM AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。
 
 此外，基于开发者的需求，我们开发了具备内容生成、图像生成的<b> AGIEditor 编辑器组件</b>，方便开发者使用；还有集合了所有 AIGC 服务商接口的 <b>AIGCCLOUD PYPI 包</b>，Python 开发者只需要安装一次后即可调用上述 AIGC 服务商的接口。
 
@@ -38,7 +38,7 @@ meta:
 - 无前置审核流程，注册完成账号即可使用，充值方式简单且多样
 - 对官方接口进行了必要的优化和简化，让开发者使用更方便
 - 提供跨 AIGC 服务整合的能力，能让用户方便地使用最有方案
-- 提供及时的真人响应支持服务
+- 提供及时的技术专家支持服务
 
 
 
@@ -72,7 +72,10 @@ APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于�
 
 默认注册后，我们都会免费赠送 5000P 额度供你使用，使用完毕后，您可以随时通过充值购买额度。
 
-# 03 - AIGC API 文档
+# 03 - AIGC API集成
+
+AIGC 的 API集成模块主要为开发者提供了直接接入各个常见大语言模型（主要是文字模型）能力的接口。
+对于一些需要部署的大预言模型，如ChatGLM等，我们也都自行搭建了对应的运算集群，开发者只需要调用接口即可使用。
 
 ## APIGPT OpenAI
 
@@ -127,6 +130,22 @@ ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进
 <a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 >></a>
 
 
+## APIGPT PaLM
+
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png">
+
+<a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 PaLM 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。
+
+APIGPT 基于 Google PaLM 构建了 API 服务。
+
+
+<a href='#'>APIGPT.CLOUD - PaLM 接口在完善中... >></a>
+
+
+# 04 - AIGC AI画图
+
+AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系统能力的接口，目前我们主要提供了Stable Diffusion系统的能力输出，开发者无需自行搭建，通过接口即可调用相关AI作图的能力。
+
 ## APIGPT StableDiffusion
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/05/SD.png">
@@ -141,26 +160,23 @@ ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进
 <a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
 
 
-## APIGPT BardAI
-
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png">
-
-<a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 LaMDA 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。
-
-APIGPT 基于 Google BardAI 构建了 API 服务。
 
 
-<a href='#'>APIGPT.CLOUD - BardAI 接口在完善中... >></a>
+# 05 - AIGC AIChat
 
+现有的大预言模型提供了很强大的语言处理能力，但并未对各种应用场景提供信息存储、便捷工具等方案。APIGPT 通过集成了向量存储等周边服务的能力，扩展出了 APIGPT AIChat 服务，方便开发者获得一种开箱即用的服务对接能力。
 
+## Q&A 问答
 
-# 04 - AIGC Chat 文档
+## 记忆助理
 
-# 05 - 负责任的 AIGC
+## 产品推荐
+
+# 06 - 负责任的 AIGC
 
 ## 内容安全
 
+根据国家法律，我们应用了基础的安全规则，避免非法信息的生成。也需要开发者再使用时需要注意不让非法内容进入，我们会给予监督和管理。
+
 ## 隐私保护
 
-
-# 06 - 资源

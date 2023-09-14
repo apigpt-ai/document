@@ -345,7 +345,7 @@
               </ul>
           </li>
           <li>
-            <a href="#03-aigc-api" class="toc-h1 toc-link" data-title="03 - AIGC API 文档">03 - AIGC API 文档</a>
+            <a href="#03-aigc-api" class="toc-h1 toc-link" data-title="03 - AIGC API集成">03 - AIGC API集成</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#apigpt-openai" class="toc-h2 toc-link" data-title="APIGPT OpenAI">APIGPT OpenAI</a>
@@ -357,18 +357,34 @@
                     <a href="#apigpt-chatglm" class="toc-h2 toc-link" data-title="APIGPT ChatGLM">APIGPT ChatGLM</a>
                   </li>
                   <li>
-                    <a href="#apigpt-stablediffusion" class="toc-h2 toc-link" data-title="APIGPT StableDiffusion">APIGPT StableDiffusion</a>
-                  </li>
-                  <li>
-                    <a href="#apigpt-bardai" class="toc-h2 toc-link" data-title="APIGPT BardAI">APIGPT BardAI</a>
+                    <a href="#apigpt-palm" class="toc-h2 toc-link" data-title="APIGPT PaLM">APIGPT PaLM</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#04-aigc-chat" class="toc-h1 toc-link" data-title="04 - AIGC Chat 文档">04 - AIGC Chat 文档</a>
+            <a href="#04-aigc-ai" class="toc-h1 toc-link" data-title="04 - AIGC AI画图">04 - AIGC AI画图</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#apigpt-stablediffusion" class="toc-h2 toc-link" data-title="APIGPT StableDiffusion">APIGPT StableDiffusion</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#05-aigc" class="toc-h1 toc-link" data-title="05 - 负责任的 AIGC">05 - 负责任的 AIGC</a>
+            <a href="#05-aigc-aichat" class="toc-h1 toc-link" data-title="05 - AIGC AIChat">05 - AIGC AIChat</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#q-amp-a" class="toc-h2 toc-link" data-title="Q&amp;A 问答">Q&amp;A 问答</a>
+                  </li>
+                  <li>
+                    <a href="#060480fe3a" class="toc-h2 toc-link" data-title="记忆助理">记忆助理</a>
+                  </li>
+                  <li>
+                    <a href="#876f10b01b" class="toc-h2 toc-link" data-title="产品推荐">产品推荐</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#06-aigc" class="toc-h1 toc-link" data-title="06 - 负责任的 AIGC">06 - 负责任的 AIGC</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#29fb150481" class="toc-h2 toc-link" data-title="内容安全">内容安全</a>
@@ -377,9 +393,6 @@
                     <a href="#3a43b2a76a" class="toc-h2 toc-link" data-title="隐私保护">隐私保护</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#06" class="toc-h1 toc-link" data-title="06 - 资源">06 - 资源</a>
           </li>
           <li>
             <a href="#cf68bca02a" class="toc-h1 toc-link" data-title="错误代码">错误代码</a>
@@ -403,7 +416,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='ai-apigpt-cloud'>生成式 AI 云（APIGPT.CLOUD）用户手册</h1><h1 id='01-apigpt'>01 - 关于APIGPT</h1><h2 id='73a298c445'>服务介绍</h2>
-<p>生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google Bard AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。</p>
+<p>生成式 AI 云（简称 APIGPT）是一款生成式 AI 云服务，旨在为开发者提供一站式集成多个 AIGC 服务商 API 的服务。只需开通一个 APIGPT.CLOUD 账号，开发者即可稳定访问包括 <b>OpenAI 官方</b>，<b>Azure OpenAI</b>、<b>ChatGLM</b>、<b>Claude AI</b>、<b>Google PaLM AI</b>、<b>Stable Diffusion</b> 在内的多项生成式 AI API，轻松集成生成式AI能力到自己的应用中。让 APIGPT.CLOUD 成为您的生成式AI云服务，将极大地提高您的开发效率。</p>
 
 <p>此外，基于开发者的需求，我们开发了具备内容生成、图像生成的<b> AGIEditor 编辑器组件</b>，方便开发者使用；还有集合了所有 AIGC 服务商接口的 <b>AIGCCLOUD PYPI 包</b>，Python 开发者只需要安装一次后即可调用上述 AIGC 服务商的接口。</p>
 <h2 id='apigpt'>为什么应该选择 APIGPT</h2>
@@ -413,7 +426,7 @@
 <li>无前置审核流程，注册完成账号即可使用，充值方式简单且多样</li>
 <li>对官方接口进行了必要的优化和简化，让开发者使用更方便</li>
 <li>提供跨 AIGC 服务整合的能力，能让用户方便地使用最有方案</li>
-<li>提供及时的真人响应支持服务</li>
+<li>提供及时的技术专家支持服务</li>
 </ul>
 <h1 id='02'>02 - 快速入门</h1>
 <p>您只要在 <a href='https://apigpt.cloud' target='_blank'>APIGPT.CLOUD 官网</a> 创建一个账号，无需审核，即拥有了方便访问各个 AIGC 服务 API 的权限。</p>
@@ -435,7 +448,10 @@
 <p>APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于原 AIGC 官方 APII，可以无缝切换。</p>
 <h2 id='d8b8637e42'>试用与充值</h2>
 <p>默认注册后，我们都会免费赠送 5000P 额度供你使用，使用完毕后，您可以随时通过充值购买额度。</p>
-<h1 id='03-aigc-api'>03 - AIGC API 文档</h1><h2 id='apigpt-openai'>APIGPT OpenAI</h2>
+<h1 id='03-aigc-api'>03 - AIGC API集成</h1>
+<p>AIGC 的 API集成模块主要为开发者提供了直接接入各个常见大语言模型（主要是文字模型）能力的接口。
+对于一些需要部署的大预言模型，如ChatGLM等，我们也都自行搭建了对应的运算集群，开发者只需要调用接口即可使用。</p>
+<h2 id='apigpt-openai'>APIGPT OpenAI</h2>
 <p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png"></p>
 
 <p>APIGPT 的 OpenAI 是基于 <a href='https://platform.openai.com/docs/models/gpt-4' target='_blank'>OpenAI 官方 GPT4</a> 和 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 服务构建。</p>
@@ -527,6 +543,16 @@
 <p>在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。</p>
 
 <p><a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 &gt;&gt;</a></p>
+<h2 id='apigpt-palm'>APIGPT PaLM</h2>
+<p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png"></p>
+
+<p><a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 PaLM 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。</p>
+
+<p>APIGPT 基于 Google PaLM 构建了 API 服务。</p>
+
+<p><a href='#'>APIGPT.CLOUD - PaLM 接口在完善中... &gt;&gt;</a></p>
+<h1 id='04-aigc-ai'>04 - AIGC AI画图</h1>
+<p>AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系统能力的接口，目前我们主要提供了Stable Diffusion系统的能力输出，开发者无需自行搭建，通过接口即可调用相关AI作图的能力。</p>
 <h2 id='apigpt-stablediffusion'>APIGPT StableDiffusion</h2>
 <p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/SD.png"></p>
 
@@ -537,15 +563,11 @@
 <p>你只需要在 APIGPT 中建立了一个 SDAI App 后，就可以在你的应用程序中使用 SDAI 的接口。</p>
 
 <p><a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 &gt;&gt;</a></p>
-<h2 id='apigpt-bardai'>APIGPT BardAI</h2>
-<p><img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png"></p>
-
-<p><a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 LaMDA 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。</p>
-
-<p>APIGPT 基于 Google BardAI 构建了 API 服务。</p>
-
-<p><a href='#'>APIGPT.CLOUD - BardAI 接口在完善中... &gt;&gt;</a></p>
-<h1 id='04-aigc-chat'>04 - AIGC Chat 文档</h1><h1 id='05-aigc'>05 - 负责任的 AIGC</h1><h2 id='29fb150481'>内容安全</h2><h2 id='3a43b2a76a'>隐私保护</h2><h1 id='06'>06 - 资源</h1><h1 id='cf68bca02a'>错误代码</h1>
+<h1 id='05-aigc-aichat'>05 - AIGC AIChat</h1>
+<p>现有的大预言模型提供了很强大的语言处理能力，但并未对各种应用场景提供信息存储、便捷工具等方案。APIGPT 通过集成了向量存储等周边服务的能力，扩展出了 APIGPT AIChat 服务，方便开发者获得一种开箱即用的服务对接能力。</p>
+<h2 id='q-amp-a'>Q&amp;A 问答</h2><h2 id='060480fe3a'>记忆助理</h2><h2 id='876f10b01b'>产品推荐</h2><h1 id='06-aigc'>06 - 负责任的 AIGC</h1><h2 id='29fb150481'>内容安全</h2>
+<p>根据国家法律，我们应用了基础的安全规则，避免非法信息的生成。也需要开发者再使用时需要注意不让非法内容进入，我们会给予监督和管理。</p>
+<h2 id='3a43b2a76a'>隐私保护</h2><h1 id='cf68bca02a'>错误代码</h1>
 <aside class="notice">
 APIGPT APIs 使用下列的错误代码
 </aside>
