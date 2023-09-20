@@ -1,12 +1,12 @@
 ---
-title: APIGPT.CLOUD 用户文档
+title: APIGPT CLOUD 用户文档
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
   - python
 
 toc_footers:
-  - <center><a href='https://apigpt.cloud'>访问 APIGPT.CLOUD</a></center>
+  - 
 
 includes:
   - errors
@@ -17,10 +17,10 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for APIGPT.CLOUD API
+    content: Documentation for APIGPT CLOUD API
 ---
 
-# 生成式 AI 云（APIGPT.CLOUD）用户手册
+# 生成式 AI 云（APIGPT CLOUD）用户手册
 
 
 
@@ -44,10 +44,10 @@ meta:
 
 # 02 - 快速入门
 
-您只要在 <a href='https://apigpt.cloud' target='_blank'>APIGPT.CLOUD 官网</a> 创建一个账号，无需审核，即拥有了方便访问各个 AIGC 服务 API 的权限。
+通过和我方的客户经理沟通确认，您只要在PGPT.CLOUD创建一个账号，即拥有了方便访问各个 AIGC 服务 API 的权限。
 
 ## 注册账号
-点击 <a href='https://apigpt.cloud' target='_blank'> APIGPT.CLOUD 官网</a> 右上角的“开始按钮”，即可进入注册流程。
+点击 <a href='https://user.pgpt.cloud' target='_blank'> APIGPT CLOUD 应用</a> 页面的“注册”链接，即可进入注册流程。
 
 <img src='https://apigpt.cloud/wp-content/uploads/2023/07/apply-for-apigpt.png' />
 
@@ -81,7 +81,7 @@ AIGC 的 API集成模块主要为开发者提供了直接接入各个常见大�
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
 
-APIGPT 的 OpenAI 是基于 <a href='https://platform.openai.com/docs/models/gpt-4' target='_blank'>OpenAI 官方 GPT4</a> 和 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 服务构建。
+APIGPT 的 OpenAI 是基于 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 的服务构建。
 
 通过 APIGPT OpenAI 可使用很多不同模型，这些模型按系列和功能分组。 模型系列通常按其预期任务关联模型。 下表介绍了 Azure OpenAI 中当前可用的模型系列。 目前并非所有模型都可在所有区域中使用。
 
@@ -89,16 +89,17 @@ APIGPT OpenAI 目前支持的模型包括并不限于下列：
 
 模型组 | 模型ID | 限制 | 描述
 --------- | ------- | ----------- | -----------
-GPT-4 | gpt-4 | 8192 | 与任何 OpenAI 以前的模型相比，GPT-4 可以更准确地解决难题，与 gpt-35-turbo 一样，GPT-4 针对聊天进行了优化，但适用于传统的完成任务。
-GPT-3.5 | gpt-35-turbo | 4096 | ChatGPT 模型 (gpt-35-turbo) 是一种专为对话接口设计的语言模型
-GPT-3.5 | gpt-35-turbo-16k | 16k | ChatGPT 模型 (gpt-35-turbo-16k) 是gpt-35-turbo的增强版，可以支持高达16k的 Token输入
+GPT-4 | gpt-4 | 8192 | 与任何 OpenAI 以前的模型相比，GPT-4 可以更准确地解决难题，与 GPT-35-TURBO 一样，GPT-4 针对聊天进行了优化，但适用于传统的完成任务。
+GPT-4 | gpt-4-32k | 32k | 支持32k Token传输的GPT-4模型
+GPT-3.5 | gpt-35-turbo | 4096 | GPT-35-TURBO 是一种专为对话接口设计的语言模型
+GPT-3.5 | gpt-35-turbo-16k | 16k | GPT-35-TURBO-16K 是 GPT-35-TURBO 的增强版，可以支持高达16k的 Token输入
 Embeddings | text-embedding-ada-002 | 8191 | 一组可以理解和使用嵌入的模型。 嵌入是一种特殊的数据表示格式，可由机器学习模型和算法轻松使用。 嵌入是一段文本的语义含义的信息密集表示。
 Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可以理解和生成代码。 它们的训练数据包含自然语言和来自 GitHub 的数十亿行公开代码。
 
 
 在 APIGPT 中建立了一个 OpenAI App 后，你可以在你的应用程序中使用 OpenAI 的接口。
 
-<a href='openai.html'>阅读 APIGPT.CLOUD - OpenAI 开发文档 >></a>
+<a href='openai.html'>阅读 APIGPT CLOUD - OpenAI 开发文档 >></a>
 
 ## APIGPT ClaudeAI
 
@@ -116,7 +117,7 @@ Claude | claude-2 | claude-2.0 | 在需要复杂推理的任务上表现出色
 
 在 APIGPT 中建立了一个 ClaudeAI App 后，你可以在你的应用程序中使用 ClaudeAI 的接口。
 
-<a href='claudeai.html'>阅读 APIGPT.CLOUD - ClaudeAI 开发文档 >></a>
+<a href='claudeai.html'>阅读 APIGPT CLOUD - ClaudeAI 开发文档 >></a>
 
 ## APIGPT ChatGLM
 
@@ -127,19 +128,19 @@ ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进
 在 APIGPT 中建立一个 ChatGLM2-6B App后，你就可以在你的应用程序中使用 ChatGLM-6B 的接口。
 
 
-<a href='chatglm2-6b.html'>阅读 APIGPT.CLOUD - ChatGLM2-6B 开发文档 >></a>
+<a href='chatglm2-6b.html'>阅读 APIGPT CLOUD - ChatGLM2-6B 开发文档 >></a>
 
 
 ## APIGPT PaLM
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/600X3005.png">
+<img src="https://apigpt.cloud/wp-content/uploads/2023/09/PaLM-AI.png">
 
-<a href='https://bard.google.com/' target='_blank'>BardAI</a> 是 Google 基于对话应用语言模型 PaLM 来构建，可以更准确，全面地理解自然语言，并且为用户提供及时的信息。
+PaLM AI 是 Google 用于构建 <a href='https://bard.google.com/' target='_blank'>Bard</a> 的大语言模型，基于Google的技术和积累，它准确全面地理解自然语言，能为用户提供及时有效的信息。
 
 APIGPT 基于 Google PaLM 构建了 API 服务。
 
 
-<a href='#'>APIGPT.CLOUD - PaLM 接口在完善中... >></a>
+<a href='#'>APIGPT CLOUD - PaLM 接口在完善中... >></a>
 
 
 # 04 - AIGC AI画图
@@ -150,14 +151,14 @@ AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/05/SD.png">
 
-基于 AI 的<a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是一种潜在扩散模型（Latent Diffusion Model），能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
+<a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是AI画图领域中的一种潜在扩散模型方案（Latent Diffusion Model），它能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
 
 而现在对于很多开发者而言，如何快速获得一个可以立即上手的 Stable Diffusion 环境是最大的门槛，基于此，APIGPT 搭建了GPU 算力云，为用户提供了便捷的 Stable Diffusion API，开发者无需自行折腾繁琐的算力服务器，大大节省了时间和效率。
 
 
 你只需要在 APIGPT 中建立了一个 SDAI App 后，就可以在你的应用程序中使用 SDAI 的接口。
 
-<a href='sdai.html'>阅读 APIGPT.CLOUD - SDAI 开发文档 >></a>
+<a href='sdai.html'>阅读 APIGPT CLOUD - SDAI 开发文档 >></a>
 
 
 
