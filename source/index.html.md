@@ -44,17 +44,16 @@ meta:
 
 # 02 - 快速入门
 
-通过和我方的客户经理沟通确认，您只要在PGPT.CLOUD创建一个账号，即拥有了方便访问各个 AIGC 服务 API 的权限。
 
 ## 注册账号
-点击 <a href='https://user.pgpt.cloud' target='_blank'> APIGPT CLOUD 应用</a> 页面的“注册”链接，即可进入注册流程。
+通过和我方的客户经理沟通后，经由客户经理提供的注册链接注册后，即可拥有了方便访问各个 AIGC 服务 API 的权限。
 
 <img src='https://apigpt.cloud/wp-content/uploads/2023/07/apply-for-apigpt.png' />
 
-提交账号信息后进入到资料填写页面，在此处选择 APIGPT 服务，最后提交，无需审核，即可马上开通账号。
+在注册页面提交账号信息后进入到资料填写页面，在此处选择 APIGPT 服务，最后提交，无需审核，即可马上开通账号。
 
 ## 创建App
-注册成功后，点击后即可进入到控制面板，通过左侧菜单的 API Integration 即可通过创建 App 的方式获得 API Integration，新建一个 App 后点击提交，即可获得访问对应 AIGC 服务的 API Key。
+注册成功后，点击后即可进入到控制面板，通过左侧菜单的 API Integration 即可通过创建 App 的方式获得 API Integration，新建一个 App 后点击提交，即可获得访问对应 AIGC 服务的 API Key。（如App处于审核状态通，则可以联系我方项目经理沟通审核后开通，企业版的用户创建的App是自动通过审核状态）
 
 <img src='https://apigpt.cloud/wp-content/uploads/2023/05/2-1.png'>
 
