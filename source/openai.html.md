@@ -175,10 +175,11 @@ curl https://openai.pgpt.cloud/v1/chat/completions \
 ```
 
 #### 参数 - model `string` Required
-要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`
 
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`
 
 #### 参数 - messages `array` Required
+
 到目前为止，对话包含的消息列表
 
 消息 `message` 的数据结构:
@@ -272,9 +273,11 @@ curl https://openai.pgpt.cloud/v1/completions \
 ```
 
 #### 参数 - model `string` Required
-要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`
+
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`
 
 #### 参数 - prompt `string or array` Required
+
 要为其生成完成（completions）的提示，可以以字符串、字符串数组、标记数组或标记数组的数组形式进行编码。
 
 请注意，在训练期间，模型所看到的文档分隔符为 "<|endoftext|>"
@@ -359,9 +362,11 @@ curl https://openai.pgpt.cloud/v1/embeddings \
 ```
 
 #### 参数 - model `string` Required
+
 要使用的模型ID。目前我们支持并推荐用 `text-embedding-ada-002`
 
 #### 参数 - input `string or array` `Required`
+
 要嵌入的输入文本，可以以字符串或标记数组的形式进行编码。要在单个请求中嵌入多个输入，请传递字符串数组或标记数组的数组。每个输入的标记数不能超过模型的最大输入标记数（对于text-embedding-ada-002模型，最大输入标记数为8191个）。
 
 <aside class="notice">
