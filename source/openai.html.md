@@ -35,6 +35,8 @@ meta:
 
 `npm install openai`
 
+当您在API中需要开启使用stream模式时，推荐用OpenAI官方的SDK来调用接口，避免繁琐的数据解析问题。
+
 
 # 01 认证
 OpenAI API 使用 API 密钥进行身份验证。请访问你的 <a href=''>App 页面</a>，以获取你在请求中使用的 API 密钥。
