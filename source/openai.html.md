@@ -324,7 +324,7 @@ print(res)
 ```
 
 ```shell
-curl https://openai.pgpt.cloud/v1/completions \
+curl https://openai.pgpt.cloud/v1/embeddings \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <API_KEY>" \
 -d '{
