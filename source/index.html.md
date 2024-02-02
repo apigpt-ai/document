@@ -90,6 +90,7 @@ APIGPT OpenAI 目前支持的模型包括并不限于下列：
 --------- | ------- | ----------- | -----------
 GPT-4 | gpt-4 | 8192 | 与任何 OpenAI 以前的模型相比，GPT-4 可以更准确地解决难题，与 GPT-35-TURBO 一样，GPT-4 针对聊天进行了优化，但适用于传统的完成任务。
 GPT-4 | gpt-4-32k | 32k | 支持32k Token传输的GPT-4模型
+GPT-4 | gpt-4-turbo | 128k | GPT-4-Turbo支持长达128K的Token输入，同时知识库更新为2023年3月。
 GPT-3.5 | gpt-3.5-turbo | 4096 | GPT-35-TURBO 是一种专为对话接口设计的语言模型
 GPT-3.5 | gpt-3.5-turbo-16k | 16k | GPT-35-TURBO-16K 是 GPT-35-TURBO 的增强版，可以支持高达16k的 Token输入
 Embeddings | text-embedding-ada-002 | 8191 | 一组可以理解和使用嵌入的模型。 嵌入是一种特殊的数据表示格式，可由机器学习模型和算法轻松使用。 嵌入是一段文本的语义含义的信息密集表示。

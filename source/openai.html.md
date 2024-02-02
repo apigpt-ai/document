@@ -176,7 +176,7 @@ curl https://openai.pgpt.cloud/v1/chat/completions \
 
 #### 参数 - model `string` Required
 
-要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`, `gpt-4-turbo`
 
 #### 参数 - messages `array` Required
 
