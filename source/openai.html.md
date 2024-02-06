@@ -176,7 +176,61 @@ curl https://openai.pgpt.cloud/v1/chat/completions \
 
 #### 参数 - model `string` Required
 
-要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`, `gpt-4-turbo`
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`, `gpt-4-turbo`, `gpt-4-tubo-vision`
+
+其中 `gpt-4-turbo-vision` 融合了视觉数据，实现了更进阶的图像理解，不仅仅是认识图片中的物件，更能理解上下文和细节，比如写出详细的图片标题、提供丰富的语意描述、回答有关视觉内容的问题等。示例见右侧请求示范。
+
+> gpt-4-turbo-vision 请求示范
+
+```python
+from openai import OpenAI
+import os
+
+base_url = 'https://openai.pgpt.cloud/v1'
+api_key = os.getenv("API_KEY")
+
+openai = OpenAI(api_key=api_key, base_url=base_url)
+
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {"type": "text",
+             "text":
+                 """
+                 用关键词描述图片, 输出格式为：
+
+                 第一张图片的关键词描述：...
+                 ...
+                 第N张图片的关键词描述：...
+                 """
+             },
+            {"type": "image_url", "image_url": {"url": "https://dalleproduse.blob.core.windows.net/private/images/e9113ac5-1a91-467f-b751-7f9e746c5ae9/generated_00.png?se=2024-02-05T03%3A19%3A22Z&sig=M5y1Npoovxvp1CQslKGnwrQ3Pk3IbY%2Biwjk9MD3Z%2Bfo%3D&ske=2024-02-07T17%3A32%3A21Z&skoid=09ba021e-c417-441c-b203-c81e5dcd7b7f&sks=b&skt=2024-01-31T17%3A32%3A21Z&sktid=33e01921-4d64-4f8c-a055-5bdaffd5e33d&skv=2020-10-02&sp=r&spr=https&sr=b&sv=2020-10-02"}},
+            # *image_urls
+        ],
+    }
+]
+
+response = openai.chat.completions.create(
+    model='gpt-4-turbo-vision',
+    messages=messages,
+    max_tokens=1000,
+    temperature=0,
+    stream=False
+)
+
+print(response)
+```
+```shell
+curl https://openai.pgpt.cloud/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <API_KEY>" \
+-d '{
+ "model": "gpt-4-turbo-vision",
+ "messages": [{"role": "user", "content": [{"type": "text", "text": "用关键词描述图片"}, {"type": "image_url", "image_url": {"url": "https://dalleproduse.blob.core.windows.net/private/images/e9113ac5-1a91-467f-b751-7f9e746c5ae9/generated_00.png?se=2024-02-05T03%3A19%3A22Z&sig=M5y1Npoovxvp1CQslKGnwrQ3Pk3IbY%2Biwjk9MD3Z%2Bfo%3D&ske=2024-02-07T17%3A32%3A21Z&skoid=09ba021e-c417-441c-b203-c81e5dcd7b7f&sks=b&skt=2024-01-31T17%3A32%3A21Z&sktid=33e01921-4d64-4f8c-a055-5bdaffd5e33d&skv=2020-10-02&sp=r&spr=https&sr=b&sv=2020-10-02"}}]}],
+ "temperature": 0.7
+}'
+```
 
 #### 参数 - messages `array` Required
 
@@ -205,10 +259,108 @@ name | `string` | `Optional` | 此 `content` 作者的姓名。姓名可以包�
 在聊天补全中生成的最大令牌数。
 输入令牌和生成令牌的总长度受模型上下文长度的限制。
 
+#### 参数 tools `array` Optional Default  to null
+模型可能调用的工具列表。 目前，仅支持函数作为工具。 使用它来提供模型可以为其生成 JSON 输入的函数列表。
+
+参数 | 类型       | 是否必须       | 描述
+-----|----------|------------|-------
+type | `string` | `Required` | tool的类型，仅支持`function`
+function | `object` | `Required` | 函数定义
+function.description | `string` | `Optional` | 对函数功能的描述，模型使用它来选择何时以及如何调用该函数。
+function.name | `string` | `Required` | 函数名
+function.parameters | `object` | `Optional` | 函数要接收的参数
+
+>Functions请求示范
+
+```shell
+curl https://openai.pgpt.cloud/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $API_KEY" \
+-d '{
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is the weather like in Boston?"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_weather",
+        "description": "Get the current weather in a given location",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string",
+              "description": "The city and state, e.g. San Francisco, CA"
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["celsius", "fahrenheit"]
+            }
+          },
+          "required": ["location"]
+        }
+      }
+    }
+  ],
+  "tool_choice": "auto"
+}'
+```
+```python
+from openai import OpenAI
+base_url = 'https://openai.pgpt.cloud/v1'
+api_key = os.getenv("API_KEY")
+
+client = OpenAI(api_key=api_key, base_url=base_url)
+
+tools = [
+  {
+    "type": "function",
+    "function": {
+      "name": "get_current_weather",
+      "description": "Get the current weather in a given location",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "The city and state, e.g. San Francisco, CA",
+          },
+          "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
+        },
+        "required": ["location"],
+      },
+    }
+  }
+]
+messages = [{"role": "user", "content": "What's the weather like in Boston today?"}]
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=messages,
+  tools=tools,
+  tool_choice="auto"
+)
+
+print(completion)
+```
+
+#### 参数 tool_choice `string` Optional Default to 'auto'
+控制模型调用哪个函数（如果有）。 none 表示模型不会调用函数而是生成消息。 auto 意味着模型可以在生成消息或调用函数之间进行选择。 通过 {"type": "function", "function": {"name": "my_function"}} 指定特定函数会强制模型调用该函数。
+
+当不存在任何函数时，none 是默认值。 如果存在函数，则 auto 是默认值。
+
+#### 参数 functions `array` Optional Default  to null
+已弃用，取而代之的是 tools。
+
+#### 参数 function_call `string` Optional Default to 'auto'
+已弃用，取而代之的是 tool_choice。
 
 <aside class="notice">
-暂未支持 ChatGPT 官方的 function 调用特性及相关参数。
-此外为简化使用，官方 Create chat completion 函数下列可选参数也未被支持：top_p, n, stop, presence_penalty, frequency_penalty, logit_bias, user, 如您需要，请通过左方二维码联系我们
+为简化使用，官方 Create chat completion 函数下列可选参数也未被支持：top_p, n, stop, presence_penalty, frequency_penalty, logit_bias, user, 如您需要，请通过左方二维码联系我们
 </aside>
 
 # 04 Completions APIs
@@ -228,7 +380,7 @@ import openai
 openai.api_key = '<API_KEY>'
 openai.api_base = 'https://openai.pgpt.cloud/v1'
 res = openai.Completion.create(
-  model="gpt-3.5-turbo",
+  model="gpt-3.5-turbo-instruct",
   prompt="I am a",
   max_tokens=7,
   temperature=0
@@ -241,7 +393,7 @@ curl https://openai.pgpt.cloud/v1/completions \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <APK_KEY>" \
 -d '{
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-3.5-turbo-instruct",
     "prompt": "I am a",
     "max_tokens": 7,
     "temperature": 0
@@ -255,7 +407,7 @@ curl https://openai.pgpt.cloud/v1/completions \
   "id": "cmpl-7TkgRTfjrz80goegsOC2nrkzi1WPm",
   "object": "text_completion",
   "created": 1687325319,
-  "model": "gpt-35-turbo",
+  "model": "gpt-35-turbo-instruct",
   "choices": [
     {
       "text": " 20 year old female and I",
@@ -274,7 +426,7 @@ curl https://openai.pgpt.cloud/v1/completions \
 
 #### 参数 - model `string` Required
 
-要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`,`gpt-4-32k`
+要使用的模型ID。目前我们支持并推荐用 `gpt-3.5-turbo-instruct`
 
 #### 参数 - prompt `string or array` Required
 
