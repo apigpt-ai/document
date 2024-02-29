@@ -132,7 +132,7 @@ ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进
 
 <a href='chatglm2-6b.html'>阅读 APIGPT CLOUD - ChatGLM2-6B 开发文档 >></a>
 
-
+<!--
 ## APIGPT PaLM
 
 <img src="https://apigpt.cloud/wp-content/uploads/2023/09/PaLM-AI.png">
@@ -143,6 +143,7 @@ APIGPT 基于 Google PaLM 构建了 API 服务。
 
 
 <a href='#'>APIGPT CLOUD - PaLM 接口在完善中... >></a>
+-->
 
 ## APIGPT GeminiAI
 
