@@ -1,0 +1,610 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for APIGPT.CLOUD GeminiAI"
+        >
+    <title>APIGPT.CLOUD - GeminiAI 开发文档</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-bbbf83f5.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-88f539c5.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="gemini" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-b7be038d.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#apigpt-cloud-geminiai" class="toc-h1 toc-link" data-title="APIGPT.Cloud - GeminiAI 开发文档">APIGPT.Cloud - GeminiAI 开发文档</a>
+          </li>
+          <li>
+            <a href="#01-app" class="toc-h1 toc-link" data-title="01 创建APP集成">01 创建APP集成</a>
+          </li>
+          <li>
+            <a href="#02-api" class="toc-h1 toc-link" data-title="02 API请求">02 API请求</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#32c808cbe5" class="toc-h2 toc-link" data-title="认证">认证</a>
+                  </li>
+                  <li>
+                    <a href="#f7b5b87a4a" class="toc-h2 toc-link" data-title="发送请求">发送请求</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#cf68bca02a" class="toc-h1 toc-link" data-title="错误代码">错误代码</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><center><a href='index.html'>返回文档首页</a></center></li>
+        </ul>
+
+      <div style="padding:60px">
+
+      <!--<img src="images/qrcode_for_apigpt-723fccb3.jpg" class="logo" alt="" />
+      <p style="color:grey">扫描关注<br />生成式AI云公众号</p>
+
+      <img src="images/apigpt-contact-e412e752.png" class="logo" alt="" />
+      <p style="color:grey">扫描加入<br />生成式AI用户群</p>-->
+      </div>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='apigpt-cloud-geminiai'>APIGPT.Cloud - GeminiAI 开发文档</h1><h1 id='01-app'>01 创建APP集成</h1>
+<p>登录 <a href='https://app.pgpt.cloud/'>APIGPT企业版</a>，在AI集成页面，点击<code>创建AI集成</code>，AI供应商选择<code>GeminiAI</code>。</p>
+<h1 id='02-api'>02 API请求</h1><h2 id='32c808cbe5'>认证</h2>
+<p>GeminiAI API 使用 API 密钥进行身份验证。请访问你的 
+<a href='https://app.pgpt.cloud/#/ai_integration'>App 页面</a>，以获取你在请求中使用的 API 密钥。</p>
+
+<p>请记住，你的 API 密钥是一个秘密！不要与他人分享它，也不要在任何客户端代码（浏览器、应用程序）中公开它。生产请求必须通过你自己的后端服务器路由，你的 API 密钥可以从环境变量或密钥管理服务中安全加载。</p>
+
+<p>所有 API 请求都应该在 <code>Authorization</code> HTTP 头中包含你的 API 密钥，如下所示：</p>
+
+<p><code>Authorization: Bearer &lt;替换成从APIGPT.CLOUD创建的APP Key&gt;</code></p>
+<h2 id='f7b5b87a4a'>发送请求</h2>
+<blockquote>
+<p>gemini-pro 请求示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/gemini/v1/chat/completion <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    "model": "gemini-pro",
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "太阳系"
+                },
+            ]
+        }
+    ],
+    "stream": false
+}
+'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s">/gemini/v1/chat/completions'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">KEY</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"model"</span><span class="p">:</span> <span class="s">"gemini-pro"</span><span class="p">,</span>
+    <span class="s">"contents"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"role"</span><span class="p">:</span> <span class="s">"user"</span><span class="p">,</span>
+            <span class="s">"parts"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"text"</span><span class="p">:</span> <span class="s">"太阳系"</span>
+                <span class="p">},</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"stream"</span><span class="p">:</span> <span class="bp">False</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>gemini-pro-vision 请求示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">echo</span> <span class="s1">'{
+  "contents":[
+    {
+      "parts":[
+        {"text": "What is this picture?"},
+        {
+          "inline_data": {
+            "mime_type":"image/jpeg",
+            "data": "'</span><span class="si">$(</span><span class="nb">base64</span> <span class="nt">-w0</span> image.jpg<span class="si">)</span><span class="s1">'"
+          }
+        }
+      ]
+    }
+  ]
+}'</span> <span class="o">&gt;</span> request.json
+
+curl https://ai.pgpt.cloud/gemini/v1/chat/completion <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
+<span class="nt">-d</span> @request.json
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">meutils.io.image</span> <span class="kn">import</span> <span class="n">image_to_base64</span>
+
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s">/gemini/v1/chat/completions'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">KEY</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="n">image_to_base64</span><span class="p">(</span><span class="s">'test-assets/test1.jpg'</span><span class="p">,</span> <span class="n">for_image_url</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"model"</span><span class="p">:</span> <span class="s">"gemini-pro-vision"</span><span class="p">,</span>
+    <span class="s">"contents"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"role"</span><span class="p">:</span> <span class="s">"user"</span><span class="p">,</span>
+            <span class="s">"parts"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"text"</span><span class="p">:</span> <span class="s">"这个图上有什么"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">"inline_data"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s">"mime_type"</span><span class="p">:</span> <span class="s">"image/jpeg"</span><span class="p">,</span>
+                        <span class="s">"data"</span><span class="p">:</span> <span class="n">image_data</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"stream"</span><span class="p">:</span> <span class="bp">False</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>返回示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"太阳系是一个由太阳、八大行星、矮行星、卫星、彗星、小行星等天体组成的系统。太阳系位于银河系中，是银河系中已知唯一存在生命的行星系"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='endpoint'>Endpoint</h3>
+<p><code>https://ai.pgpt.cloud/gemini/v1/chat/completions</code></p>
+<h3 id='method'>Method</h3>
+<p><code>POST</code></p>
+<h3 id='request-body'>Request Body</h3><h4 id='model-string-required'>参数 model <code>string</code> required</h4>
+<p>指定要使用的模型，仅支持 <code>gemini-pro</code> 及  <code>gemini-pro-vision</code>.</p>
+
+<p><code>gemini-pro</code> 仅支持文本聊天</p>
+
+<p><code>gemini-pro-vision</code> 支持图片解析，使用该模型时传递的消息内容必须包含文件数据</p>
+<h4 id='contents-array-content-required'>参数 contents <code>array[content]</code> required</h4>
+<p>聊天内容，包含对话历史+最新请求，<code>contents</code> 包含content对象列表，参数如下:</p>
+
+<table><thead>
+<tr>
+<th>content字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>parts</td>
+<td>array[part]</td>
+<td>单个消息的有序部件，包含 part 对象</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>用户角色，只能是 user 或者 model</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>part字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>文本消息</td>
+</tr>
+<tr>
+<td>inline_data</td>
+<td>object[blob]</td>
+<td>文件数据对象</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>blob字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mime_type</td>
+<td>string</td>
+<td>文件类型，支持&quot;image/png&quot;, &quot;image/jpeg&quot;, &quot;image/heic&quot;, &quot;image/heif&quot;, &quot;image/webp&quot;.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object[blob]</td>
+<td>文件base64数据</td>
+</tr>
+</tbody></table>
+
+<p>注意：parts参数中，<code>text</code> 与 <code>inline_data</code> 必须在独立的object中，不可放在一起。</p>
+<h4 id='stream-boolean-optional-default-to-false'>参数 stream <code>boolean</code> optional default to false</h4>
+<p>设置消息返回的形式，为 <code>true</code> 时，返回的是实时的流数据片段，为 <code>false</code> 时返回的是完整的消息</p>
+<h4 id='temperature-number-optional-defaults-to-1'>参数 - temperature <code>number</code> Optional Defaults to 1</h4>
+<p>要使用的采样温度，介于0和2之间。较高的值（如0.8）会使输出更加随机，而较低的值（如0.2）会使输出更加集中和确定性。</p>
+<h4 id='max_tokens-integer-optional-defaults-to-4096'>参数 max_tokens <code>integer</code> Optional Defaults to 4096</h4>
+<p>在聊天补全中生成的最大令牌数。
+输入令牌和生成令牌的总长度受模型上下文长度的限制。</p>
+<h3 id='response'>Response</h3><h4 id='message-string'>参数 message  <code>string</code></h4>
+<p>根据问题返回的消息</p>
+<h1 id='cf68bca02a'>错误代码</h1>
+<aside class="notice">
+APIGPT APIs 使用下列的错误代码
+</aside>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Invalid request: there was an issue with the format or content of your request.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized: there&#39;s an issue with your API key.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden: your API key does not have permission to use the specified resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not found: the requested resource was not found.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Your account has hit a rate limit.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>An unexpected error has occurred internal to Anthropic&#39;s systems.</td>
+</tr>
+<tr>
+<td>529</td>
+<td>Your API is temporarily overloaded.</td>
+</tr>
+</tbody></table>
+
+<p>When receiving a streaming response via SSE, it&#39;s possible that an error can occur after returning a 200 response, in which case error handling wouldn&#39;t follow these standard mechanisms.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,621 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for APIGPT.CLOUD SpeechAI"
+        >
+    <title>APIGPT.CLOUD - SpeechAI 开发文档</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-bbbf83f5.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-88f539c5.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="speechai" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-b7be038d.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#apigpt-cloud-speechai" class="toc-h1 toc-link" data-title="APIGPT.Cloud - SpeechAI 开发文档">APIGPT.Cloud - SpeechAI 开发文档</a>
+          </li>
+          <li>
+            <a href="#01-app" class="toc-h1 toc-link" data-title="01 创建APP集成">01 创建APP集成</a>
+          </li>
+          <li>
+            <a href="#02-api" class="toc-h1 toc-link" data-title="02 API请求">02 API请求</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#32c808cbe5" class="toc-h2 toc-link" data-title="认证">认证</a>
+                  </li>
+                  <li>
+                    <a href="#a7fa0ff5f4" class="toc-h2 toc-link" data-title="语音转文本">语音转文本</a>
+                  </li>
+                  <li>
+                    <a href="#31eba85e88" class="toc-h2 toc-link" data-title="文本转语音">文本转语音</a>
+                  </li>
+                  <li>
+                    <a href="#8c14bb75a1" class="toc-h2 toc-link" data-title="获取支持的语言">获取支持的语言</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#cf68bca02a" class="toc-h1 toc-link" data-title="错误代码">错误代码</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><center><a href='index.html'>返回文档首页</a></center></li>
+        </ul>
+
+      <div style="padding:60px">
+
+      <!--<img src="images/qrcode_for_apigpt-723fccb3.jpg" class="logo" alt="" />
+      <p style="color:grey">扫描关注<br />生成式AI云公众号</p>
+
+      <img src="images/apigpt-contact-e412e752.png" class="logo" alt="" />
+      <p style="color:grey">扫描加入<br />生成式AI用户群</p>-->
+      </div>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='apigpt-cloud-speechai'>APIGPT.Cloud - SpeechAI 开发文档</h1><h1 id='01-app'>01 创建APP集成</h1>
+<p>登录 <a href='https://app.pgpt.cloud/'>APIGPT企业版</a>，在AI集成页面，点击<code>创建AI集成</code>，AI供应商选择<code>SpeechAI</code>。</p>
+<h1 id='02-api'>02 API请求</h1><h2 id='32c808cbe5'>认证</h2>
+<p>Speech API 使用 API 密钥进行身份验证。请访问你的 
+<a href='https://app.pgpt.cloud/#/ai_integration'>App 页面</a>，以获取你在请求中使用的 API 密钥。</p>
+
+<p>请记住，你的 API 密钥是一个秘密！不要与他人分享它，也不要在任何客户端代码（浏览器、应用程序）中公开它。生产请求必须通过你自己的后端服务器路由，你的 API 密钥可以从环境变量或密钥管理服务中安全加载。</p>
+
+<p>所有 API 请求都应该在 <code>Authorization</code> HTTP 头中包含你的 API 密钥，如下所示：</p>
+
+<p><code>Authorization: Bearer &lt;替换成从APIGPT.CLOUD创建的APP Key&gt;</code></p>
+<h2 id='a7fa0ff5f4'>语音转文本</h2>
+<blockquote>
+<p>speech2text 请求示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/v1/speech/speech2text <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    '</span>lang<span class="s1">': '</span>en-US<span class="s1">',
+}'</span>
+<span class="nt">-F</span> <span class="s2">"audio=@/path/to/audio.wav"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">request</span>
+
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s">/v1/speech/speech2text'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">API_KEY</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'lang'</span><span class="p">:</span> <span class="s">'en-US'</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s">'audio'</span><span class="p">,</span> <span class="p">(</span><span class="s">'en-US_0.wav'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'../en-US_0.wav'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">),</span> <span class="s">'audio/wav'</span><span class="p">)),</span>
+<span class="p">]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Today was a beautiful day. We had a great time taking along Long walk In the morning. The county slide was in full bloom, yet the air was crisp and cold. Towards the end of the day, clouds came in forecasting much needed rain."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='endpoint'>Endpoint</h3>
+<p><code>https://ai.pgpt.cloud/v1/speech/speech2text</code></p>
+<h3 id='method'>Method</h3>
+<p><code>POST</code></p>
+<h3 id='request-body'>Request Body</h3><h4 id='audio-file-required'>参数 audio <code>file</code> required</h4>
+<p>上传语音文件，仅支持 <code>audio/amr</code> 及 <code>audio/wav</code> 两种格式的音频</p>
+<h4 id='lang-string-required'>参数 lang <code>string</code> required</h4>
+<p>语音文件所用的语言，默认使用<code>en-US</code>，常用的语言代码如下</p>
+
+<table><thead>
+<tr>
+<th>区域设置</th>
+<th>语言</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>de-DE</td>
+<td>德语（德国）</td>
+</tr>
+<tr>
+<td>en-GB</td>
+<td>英语（英国）</td>
+</tr>
+<tr>
+<td>en-US</td>
+<td>英语（美国）</td>
+</tr>
+<tr>
+<td>es-ES</td>
+<td>西班牙语（西班牙）</td>
+</tr>
+<tr>
+<td>js-JP</td>
+<td>日语（日本）</td>
+</tr>
+<tr>
+<td>ko-KR</td>
+<td>韩语（韩国）</td>
+</tr>
+<tr>
+<td>pt-PT</td>
+<td>葡萄牙语（葡萄牙）</td>
+</tr>
+<tr>
+<td>ru-RU</td>
+<td>俄语（俄罗斯）</td>
+</tr>
+<tr>
+<td>th-TH</td>
+<td>泰语（泰国）</td>
+</tr>
+<tr>
+<td>wuu-CN</td>
+<td>中文（吴语）</td>
+</tr>
+<tr>
+<td>yue-CN</td>
+<td>中文（粤语）</td>
+</tr>
+<tr>
+<td>zh-CN</td>
+<td>中文（普通话）</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><h4 id='text-string'>参数 text <code>string</code></h4>
+<p>语音识别出来的文本数据</p>
+<h2 id='31eba85e88'>文本转语音</h2>
+<blockquote>
+<p>text2speech 请求示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/v1/speech/text2speech <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    '</span>voice_name<span class="s1">': '</span>en-US-JennyNeural<span class="s1">',
+    '</span>text<span class="s1">': '</span>The inquiry examined accusations of potential links between drug traffickers and close confidants of President Andrés Manuel López Obrador <span class="k">while </span>he governed the country.<span class="s1">',
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s">/v1/speech/text2speech'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">KEY</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'voice_name'</span><span class="p">:</span> <span class="s">'en-US-JennyNeural'</span><span class="p">,</span>
+    <span class="s">'text'</span><span class="p">:</span> <span class="s">'The inquiry examined accusations of potential links between drug traffickers and close confidants of President Andrés Manuel López Obrador while he governed the country.'</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The inquiry examined accusations of potential links between drug traffickers and close confidants of President Andrés Manuel López Obrador while he governed the country."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://silkroadtech.oss-cn-shenzhen.aliyuncs.com/pgpt-ai/speech/202402/589cfed33ed97e5707a672f16d8150ef.wav"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.45</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='endpoint-2'>Endpoint</h3>
+<p><code>https://ai.pgpt.cloud/v1/speech/text2speech</code></p>
+<h3 id='method-2'>Method</h3>
+<p><code>POST</code></p>
+<h3 id='request-body-2'>Request Body</h3><h4 id='voice_name-string-required'>参数 voice_name <code>string</code> required</h4>
+<p>指定音频要使用的声音，可使用获取语言api查找支持的语言</p>
+<h4 id='text-string-required'>参数 text <code>string</code> required</h4>
+<p>要转换成语音的文本</p>
+<h3 id='rsponse'>Rsponse</h3><h4 id='text-string-2'>参数 text <code>string</code></h4>
+<p>转换的文本</p>
+<h4 id='url-string'>参数 url <code>string</code></h4>
+<p>生成的音频文件链接，可通过链接下载到音频文件</p>
+<h4 id='duration-float'>参数 duration <code>float</code></h4>
+<p>音频时长，按秒计</p>
+<h2 id='8c14bb75a1'>获取支持的语言</h2>
+<blockquote>
+<p>get voices 请求示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/v1/speech/text2speech/voices <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s">/v1/speech/text2speech/voices'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">KEY</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>返回示范</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft Server Speech Text to Speech Voice (af-ZA, AdriNeural)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adri"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"LocalName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adri"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ShortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af-ZA-AdriNeural"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Female"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af-ZA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"LocaleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afrikaans (South Africa)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"SampleRateHertz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"VoiceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neural"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"WordsPerMinute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='endpoint-3'>Endpoint</h3>
+<p><code>https://ai.pgpt.cloud/v1/speech/text2speech/voices</code></p>
+<h3 id='method-3'>Method</h3>
+<p><code>POST</code></p>
+<h3 id='request-body-3'>Request Body</h3>
+<p>Null</p>
+<h3 id='response-2'>Response</h3>
+<p>包含所支持的所有声音列表，需要将所选择的声音的 <code>ShortName</code> 参数值放入请求的 <code>voice_name</code> 中</p>
+<h1 id='cf68bca02a'>错误代码</h1>
+<aside class="notice">
+APIGPT APIs 使用下列的错误代码
+</aside>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Invalid request: there was an issue with the format or content of your request.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized: there&#39;s an issue with your API key.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden: your API key does not have permission to use the specified resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not found: the requested resource was not found.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Your account has hit a rate limit.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>An unexpected error has occurred internal to Anthropic&#39;s systems.</td>
+</tr>
+<tr>
+<td>529</td>
+<td>Your API is temporarily overloaded.</td>
+</tr>
+</tbody></table>
+
+<p>When receiving a streaming response via SSE, it&#39;s possible that an error can occur after returning a 200 response, in which case error handling wouldn&#39;t follow these standard mechanisms.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
