@@ -144,6 +144,34 @@ APIGPT 基于 Google PaLM 构建了 API 服务。
 
 <a href='#'>APIGPT CLOUD - PaLM 接口在完善中... >></a>
 
+## APIGPT GeminiAI
+
+![Alt text](images/google-bard-logo.png)
+
+Gemini AI是Google最强大的人工智能，为实现多模态而构建的，可以无缝地跨文本、图像、音频、视频和代码进行推理。
+
+Gemini API 允许您使用文本和图像数据进行提示，具体取决于您使用的模型变体。 例如，您可以使用`gemini-pro`模型的文本提示生成文本，并使用文本和图像数据来提示`gemini-pro-vision`模型。
+
+<a href='gemini.html'>阅读 APIGPT CLOUD - Gemini AI 开发文档 >></a>
+
+## APIGPT SpeechAI
+
+Speech AI提供业界领先的语音功能，可将语音转译为精确地文字、将文字转换成自然发音的语音、翻译语音的音讯，并可在对话期间进行说话者辨识。
+
+### 文本转语音
+可以将输入的文本转换为类似人声的合成语音。 使用神经语音，这是由深度神经网络提供支持的类人语音。 使用语音合成标记语言 (SSML) 来微调音节、发音、语速、音量等特征。
+
+### 语音转文本
+快速准确地将音频转录为 100 多种语言及其变体的文本。
+
+<a href='speechai.html'>阅读 APIGPT CLOUD - Speech AI 开发文档 >></a>
+
+
+## APIGPT TranslateAI
+
+Translate AI借助机器翻译的最新创新技术，可以即时或批量翻译100多种语言的文本，支持广泛的用例。
+
+<a href='translate-ai.html'>阅读 APIGPT CLOUD - Translate AI 开发文档 >></a>
 
 # 04 - AIGC AI画图
 
