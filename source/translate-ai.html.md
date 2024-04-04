@@ -50,12 +50,12 @@ curl https://ai.pgpt.cloud/v1/language/ \
 ```
 
 ```python
-import request
+import requests
 
-HOST = 'https://ai.pgpt.cloud/'
+HOST = 'https://ai.pgpt.cloud'
 API_KEY = '<YOUR_API_KEY>'
 
-header = {
+headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {API_KEY}",
 }
