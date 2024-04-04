@@ -370,7 +370,7 @@
 <p>language请求示范</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/v1/language/ <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -423,7 +423,7 @@
 <p>translate请求示范</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://ai.pgpt.cloud/v1/translate/ <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{
     "to_lang": ['</span>zh-Hans<span class="s1">', '</span>pt<span class="s1">', '</span>en<span class="s1">'],

@@ -45,7 +45,7 @@ Translate API 使用 API 密钥进行身份验证。请访问你的
 
 ```shell
 curl https://ai.pgpt.cloud/v1/language/ \
--H "Content-Type: application/json" \
+-X POST -H "Content-Type: application/json" \
 -H "Authorization: Bearer <API_KEY>" \
 ```
 
@@ -111,7 +111,7 @@ Null
 
 ```shell
 curl https://ai.pgpt.cloud/v1/translate/ \
--H "Content-Type: application/json" \
+-X POST -H "Content-Type: application/json" \
 -H "Authorization: Bearer <API_KEY>" \
 -d '{
     "to_lang": ['zh-Hans', 'pt', 'en'],
