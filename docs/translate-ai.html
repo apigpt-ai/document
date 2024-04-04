@@ -426,12 +426,12 @@
 <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;API_KEY&gt;"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{
-    "to_lang": ['</span>zh-Hans<span class="s1">', '</span>pt<span class="s1">', '</span>en<span class="s1">'],
-    "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。",
+    "to_lang": ["zh-Hans", "pt", "en"],
+    "text": "下表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"
 }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">request</span>
 
-<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud/'</span>
+<span class="n">HOST</span> <span class="o">=</span> <span class="s">'https://ai.pgpt.cloud'</span>
 <span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'&lt;YOUR_API_KEY&gt;'</span>
 
 <span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
@@ -440,7 +440,7 @@
 <span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"to_lang"</span><span class="p">:</span> <span class="p">[</span><span class="s">'zh-Hans'</span><span class="p">,</span> <span class="s">'pt'</span><span class="p">,</span> <span class="s">'en'</span><span class="p">],</span>
-    <span class="s">"text"</span><span class="p">:</span> <span class="s">"下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"</span><span class="p">,</span>
+    <span class="s">"text"</span><span class="p">:</span> <span class="s">"下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"</span>
 <span class="p">}</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>

@@ -114,15 +114,15 @@ curl https://ai.pgpt.cloud/v1/translate/ \
 -X POST -H "Content-Type: application/json" \
 -H "Authorization: Bearer <API_KEY>" \
 -d '{
-    "to_lang": ['zh-Hans', 'pt', 'en'],
-    "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。",
+    "to_lang": ["zh-Hans", "pt", "en"],
+    "text": "下表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"
 }'
 ```
 
 ```python
 import request
 
-HOST = 'https://ai.pgpt.cloud/'
+HOST = 'https://ai.pgpt.cloud'
 API_KEY = '<YOUR_API_KEY>'
 
 header = {
@@ -131,7 +131,7 @@ header = {
 }
 payload = {
     "to_lang": ['zh-Hans', 'pt', 'en'],
-    "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。",
+    "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"
 }
 
 res = requests.post(
