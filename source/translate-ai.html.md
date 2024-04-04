@@ -131,7 +131,7 @@ header = {
 }
 payload = {
     "to_lang": ['zh-Hans', 'pt', 'en'],
-    "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"
+    "text": "下表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。"
 }
 
 res = requests.post(
@@ -150,15 +150,15 @@ print(res.json())
     "translations": [
         [
             {
-                "text": "下qqqqq表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。",
+                "text": "下表列出了国际语音字母 (IPA) 音素、扩展语音评估方法语音字母 (X-SAMPA) 符号以及亚马逊 Polly 支持的巴西葡萄牙语语音的相应变量。",
                 "to": "zh-Hans"
             },
             {
-                "text": "A tabela qqqqq a seguir lista as variáveis correspondentes para os fonemas do Alfabeto Internacional da Fala (IPA), os símbolos do Alfabeto Fonético do Método de Avaliação da Fala Estendida (X-SAMPA) e as vozes do Português Brasileiro suportadas pelo Amazon Polly.",
+                "text": "A tabela a seguir lista as variáveis correspondentes para os fonemas do Alfabeto Internacional da Fala (IPA), os símbolos do Alfabeto Fonético do Método de Avaliação da Fala Estendida (X-SAMPA) e as vozes do Português Brasileiro suportadas pelo Amazon Polly.",
                 "to": "pt"
             },
             {
-                "text": "The following qqqqq table lists the corresponding variables for the International Speech Alphabet (IPA) phonemes, the Extended Speech Assessment Method Phonetic Alphabet (X-SAMPA) symbols, and the Brazilian Portuguese voices supported by Amazon Polly.",
+                "text": "The following table lists the corresponding variables for the International Speech Alphabet (IPA) phonemes, the Extended Speech Assessment Method Phonetic Alphabet (X-SAMPA) symbols, and the Brazilian Portuguese voices supported by Amazon Polly.",
                 "to": "en"
             }
         ]
