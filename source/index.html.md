@@ -191,6 +191,15 @@ AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系
 
 <a href='sdai.html'>阅读 APIGPT CLOUD - SDAI 开发文档 >></a>
 
+## APIGPT DALL-E
+
+<img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
+
+DALL·E 是 GPT-3 的 120 亿参数版本，经过训练可使用文本-图像对数据集从文本描述生成图像。 它具有多种功能，包括创建动物和物体的拟人化版本、以合理的方式组合不相关的概念、渲染文本以及对现有图像应用转换。
+
+你只需要在 APIGPT 中建立了一个 DALL-E App 后，就可以在你的应用程序中使用 DALL-E 的接口。
+
+<a href='openai.html#images'>阅读 APIGPT CLOUD - DALL-E 开发文档 >></a>
 
 
 
