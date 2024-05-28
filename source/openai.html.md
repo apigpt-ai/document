@@ -539,7 +539,140 @@ curl https://openai.pgpt.cloud/v1/embeddings \
 
 ## Images
 
-暂未支持
+PGPT 支持 OpenAI DALL-E接口，这是OpenAI官方训练出的根据文本说明创建图像的人工智能系统。
+
+接入的DALL-E模型包括以下两种：
+
+- DALL-E-2:  通过自然语言描述创建逼真的图像和艺术。
+- DALL-E-3:  比DALL-E-2了解更多的细微差别和细节，能将想法转化为及其准确的图像。
+
+
+### API - Create images
+
+`POST https://openai.pgpt.cloud/v1/images/generations`
+
+#### Request body
+
+> Create image 请求示范 (openai < 1.0)
+
+```python
+import openai
+openai.api_key = '<YOUR_API_KEY>'
+openai.api_base = 'https://openai.pgpt.cloud/v1'
+generation_response = openai.Image.create(
+    prompt='一团火焰',    # Enter your prompt text here
+    size='1024x1024',
+    n=1,
+    model='dall-e-3'
+)
+print(generation_response)
+```
+
+> Create image 请求示范 (openai > 1.0)
+
+```python
+# openai >= 1.0
+from openai import OpenAI
+
+api_key = '<YOUR_API_KEY>'
+base_url = 'https://openai.pgpt.cloud/v1'
+
+client = OpenAI(api_key=api_key, base_url=base_url)
+generation_response = client.images.generate(
+    # Enter your prompt text here
+    prompt='Long exposure image capturing the mesmerizing '
+           'trails of stars above a tranquil mountain landscape.',
+    model='dall-e-3',
+    size='1024x1024',
+    n=1
+)
+print(generation_response)
+```
+
+```shell
+curl https://openai.pgpt.cloud/v1/images/generation \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <APK_KEY>" \
+-d '{
+    "model": "dall-e-3",
+    "prompt": "一团火焰",
+    "size": "1024x1024,
+    "n": 1
+  }'
+```
+
+> Create image 请求示范打印结果
+
+```json
+{
+  "created": 1716862564,
+  "data": [
+    {
+      "b64_json": null,
+      "revised_prompt": "a ball of fire",
+      "url": "https://dalleprodsec.blob.core.windows.net/private/images/0d06c6d3-5279-44a7-a596-0941573cd02a/generated_00.png?se=2024-05-29T02%3A16%3A13Z&sig=a4vKF1k8oVqlNmij8EISHkFI6dhPcTe9h5Qvb2U4s9U%3D&ske=2024-05-31T00%3A01%3A35Z&skoid=e52d5ed7-0657-4f62-bc12-7e5dbb260a96&sks=b&skt=2024-05-24T00%3A01%3A35Z&sktid=33e01921-4d64-4f8c-a055-5bdaffd5e33d&skv=2020-10-02&sp=r&spr=https&sr=b&sv=2020-10-02",
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "prompt_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "profanity": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ]
+}
+```
+
+##### 参数 - model `string` Required
+
+要使用的模型ID。目前我们支持并推荐用 `dall-e-2`, `dall-e-3`
+
+##### 参数 - prompt `string` Required
+
+提示词，用于生成图片
+
+##### 参数 - size `string` Required
+
+指定图像的尺寸，目前仅支持 1024x1024、1024x1792 或 1792x1024 像素
+
+##### 参数 - n `int` Optional default t0 1
+
+指定生成的图片数量。
+
+在一次请求中，dall-e-2支持最多10张图片，dall-e-3仅支持生成1张图片
 
 ## Audio
 
