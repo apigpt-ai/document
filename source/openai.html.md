@@ -553,9 +553,10 @@ PGPT 支持 OpenAI DALL-E接口，这是OpenAI官方训练出的根据文本说�
 
 #### Request body
 
-> Create image 请求示范 (openai < 1.0)
+> Create image 请求示范
 
 ```python
+# openai < 1.0
 import openai
 openai.api_key = '<YOUR_API_KEY>'
 openai.api_base = 'https://openai.pgpt.cloud/v1'
@@ -567,8 +568,6 @@ generation_response = openai.Image.create(
 )
 print(generation_response)
 ```
-
-> Create image 请求示范 (openai > 1.0)
 
 ```python
 # openai >= 1.0
