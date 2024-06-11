@@ -589,13 +589,13 @@ print(generation_response)
 ```
 
 ```shell
-curl https://openai.pgpt.cloud/v1/images/generations \
+curl -X POST https://openai.pgpt.cloud/v1/images/generations \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <APK_KEY>" \
 -d '{
     "model": "dall-e-3",
     "prompt": "一团火焰",
-    "size": "1024x1024,
+    "size": "1024x1024",
     "n": 1
   }'
 ```
