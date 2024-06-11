@@ -589,7 +589,7 @@ print(generation_response)
 ```
 
 ```shell
-curl https://openai.pgpt.cloud/v1/images/generation \
+curl https://openai.pgpt.cloud/v1/images/generations \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <APK_KEY>" \
 -d '{
