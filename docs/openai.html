@@ -908,13 +908,13 @@
     <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">generation_response</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://openai.pgpt.cloud/v1/images/generations <span class="se">\</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://openai.pgpt.cloud/v1/images/generations <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;APK_KEY&gt;"</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{
     "model": "dall-e-3",
     "prompt": "一团火焰",
-    "size": "1024x1024,
+    "size": "1024x1024",
     "n": 1
   }'</span>
 </code></pre></div>
