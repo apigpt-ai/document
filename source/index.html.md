@@ -48,21 +48,21 @@ meta:
 ## 注册账号
 通过和我方的客户经理沟通后，经由客户经理提供的注册链接注册后，即可拥有了方便访问各个 AIGC 服务 API 的权限。
 
-<img src='https://apigpt.cloud/wp-content/uploads/2023/07/apply-for-apigpt.png' />
+<img src='images/apply-for-apigpt.png' />
 
 在注册页面提交账号信息后进入到资料填写页面，在此处选择 APIGPT 服务，最后提交，无需审核，即可马上开通账号。
 
 ## 创建App
 注册成功后，点击后即可进入到控制面板，通过左侧菜单的 API Integration 即可通过创建 App 的方式获得 API Integration，新建一个 App 后点击提交，即可获得访问对应 AIGC 服务的 API Key。（如App处于审核状态通，则可以联系我方项目经理沟通审核后开通，企业版的用户创建的App是自动通过审核状态）
 
-<img src='https://apigpt.cloud/wp-content/uploads/2023/05/2-1.png'>
+<img src='images/2-1.png'>
 
 
 ## 获得接入到第三方应用的 Token
 
 获得上述 API Key 后，即可在各 AIGC App 中使用。
 
-<img src='https://apigpt.cloud/wp-content/uploads/2023/05/3-1.png' />
+<img src='images/3-1.png' />
 
 APIGPT.CLOUD 针对各个 AIGC 服务商提供的 API 绝大部分都兼容于原 AIGC 官方 APII，可以无缝切换。
 
@@ -78,7 +78,7 @@ AIGC 的 AI集成模块主要为开发者提供了直接接入各个常见大语
 
 ## APIGPT OpenAI
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
+![Alt text](images/OAI.png)
 
 APIGPT 的 OpenAI 是基于 <a href='https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/overview' target='_blank'>Azure OpenAI</a> 的服务构建。
 
@@ -105,7 +105,7 @@ Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可
 
 ## APIGPT ClaudeAI
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/06/claudeai.png">
+<img src="images/claudeai.png">
 
 APIGPT 的 ClaudeAI 是基于<a href='https://www.anthropic.com/product' target='_blank'> Anthropic Claude </a>而构建，它主要是用于对话的模型，用人工标注的对话数据集进行训练，Claude 的对话能力更强，能够进行更长更流畅的对话互动。我们目前提供两个系列的模型，它们都支持100000个令牌上下文窗口：
 
@@ -123,7 +123,7 @@ Claude | claude-2 | claude-2.0 | 在需要复杂推理的任务上表现出色
 
 ## APIGPT ChatGLM
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/06/ChatGLM-logo.png">
+![Alt text](images/ChatGLM-logo.png)
 
 ChatGLM 使用类似于 ChatGPT 的技术，专门针对中文问答和对话进行了优化。经过约1T标识符的中英双语训练，结合监督微调、反馈自助、人类反馈强化学习等技术的加持，拥有62亿参数的 ChatGLM-6B 已经能够生成与人类偏好相当符合的回答。
 
@@ -180,7 +180,7 @@ AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系
 
 ## APIGPT StableDiffusion
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/SD.png">
+<img src="images/SD.png">
 
 <a href='https://stablediffusionweb.com/' target='_blank'>Stable Diffusion</a> 是AI画图领域中的一种潜在扩散模型方案（Latent Diffusion Model），它能够从文本描述中生成详细的图像。它还可以用于图像修复、图像绘制、文本到图像和图像到图像等任务。简单地说，我们只要给出想要的图片的文字描述在提 Stable Diffusion 就能生成符合你要求的逼真的图像！
 
@@ -191,17 +191,16 @@ AIGC 的 API画图模块主要为开发者提供了直接调用各个AI画图系
 
 <a href='sdai.html'>阅读 APIGPT CLOUD - SDAI 开发文档 >></a>
 
+
 ## APIGPT DALL-E
 
-<img src="https://apigpt.cloud/wp-content/uploads/2023/05/OAI.png">
+<img src="images/OAI.png">
 
 DALL·E 是 GPT-3 的 120 亿参数版本，经过训练可使用文本-图像对数据集从文本描述生成图像。 它具有多种功能，包括创建动物和物体的拟人化版本、以合理的方式组合不相关的概念、渲染文本以及对现有图像应用转换。
 
 你只需要在 APIGPT 中建立了一个 DALL-E App 后，就可以在你的应用程序中使用 DALL-E 的接口。
 
 <a href='openai.html#images'>阅读 APIGPT CLOUD - DALL-E 开发文档 >></a>
-
-
 
 # 05 - AIGC AI问答
 
