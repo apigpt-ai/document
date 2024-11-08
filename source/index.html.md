@@ -84,19 +84,21 @@ APIGPT 的 OpenAI 是基于 <a href='https://learn.microsoft.com/zh-cn/azure/cog
 
 通过 APIGPT OpenAI 可使用很多不同模型，这些模型按系列和功能分组。 模型系列通常按其预期任务关联模型。 下表介绍了 Azure OpenAI 中当前可用的模型系列。 目前并非所有模型都可在所有区域中使用。
 
-APIGPT OpenAI 目前支持的模型包括并不限于下列：
+APIGPT OpenAI 目前支持的模型包括并不限于下列（带*表示需要联系支持经理开通）：
 
 模型组 | 模型ID | 限制 | 描述
 --------- | ------- | ----------- | -----------
-GPT-4 | gpt-4 | 8192 | 与任何 OpenAI 以前的模型相比，GPT-4 可以更准确地解决难题，与 GPT-35-TURBO 一样，GPT-4 针对聊天进行了优化，但适用于传统的完成任务。
-GPT-4 | gpt-4-32k | 32k | 支持32k Token传输的GPT-4模型
-GPT-4 | gpt-4-turbo | 128k | GPT-4-Turbo支持长达128K的Token输入，同时知识库更新为2023年3月。
-GPT-4 | gpt-4-turbo-vision     | 128k | GPT-4-TURBO-VISION 是多模态模型，融合了自然语言处理和视觉理解，能够分析图像并对相关问题提供文字回答。
-GPT-3.5 | gpt-3.5-turbo | 4096 | GPT-35-TURBO 是一种专为对话接口设计的语言模型
-GPT-3.5 | gpt-3.5-turbo-16k | 16k | GPT-35-TURBO-16K 是 GPT-35-TURBO 的增强版，可以支持高达16k的 Token输入
-GPT-3.5 | gpt-3.5-turbo-instruct | 4097 | GPT-35-TURBO-INSTRUCT 是为了给予特定的指令而设计的，可以根据指令来分析和处理相关资料。
+GPT-4o(2024-08-06 Global)| gpt-4o | 128k | GPT-4o 是最先进的多模态模型，比 GPT-4 Turbo 更快、更便宜，具有更强的视觉功能。该型号有 128K 上下文，知识截止日期为 2023 年 10 月。
+GPT-4o Mini(2024-07-18 Global)| gpt-4o-mini | 128k | GPT-4o mini 是最具成本效益的小型型号，具有视觉功能。该型号有 128K 上下文，知识截止日期为 2023 年 10 月。
+*GPT-4 | gpt-4 | 8192 | 与任何 OpenAI 以前的模型相比，GPT-4 可以更准确地解决难题，与 GPT-35-TURBO 一样，GPT-4 针对聊天进行了优化，但适用于传统的完成任务。
+*GPT-4 | gpt-4-32k | 32k | 支持32k Token传输的GPT-4模型
+*GPT-4 Turbo| gpt-4-turbo | 128k | GPT-4-Turbo支持长达128K的Token输入，同时知识库更新为2023年3月。
+*GPT-4 Trubo Vision| gpt-4-turbo-vision     | 128k | GPT-4-TURBO-VISION 是多模态模型，融合了自然语言处理和视觉理解，能够分析图像并对相关问题提供文字回答。
+GPT-3.5 Turbo(0125)| gpt-3.5-turbo | 16k | GPT-35-TURBO 是一种专为对话接口设计的语言模型
+*GPT-3.5 Turbo 16k| gpt-3.5-turbo-16k | 16k | GPT-35-TURBO-16K 是 GPT-35-TURBO 的增强版，可以支持高达16k的 Token输入
+*GPT-3.5 Trubo Instruct| gpt-3.5-turbo-instruct | 4097 | GPT-35-TURBO-INSTRUCT 是为了给予特定的指令而设计的，可以根据指令来分析和处理相关资料。
 Embeddings | text-embedding-ada-002 | 8191 | 一组可以理解和使用嵌入的模型。 嵌入是一种特殊的数据表示格式，可由机器学习模型和算法轻松使用。 嵌入是一段文本的语义含义的信息密集表示。
-Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可以理解和生成代码。 它们的训练数据包含自然语言和来自 GitHub 的数十亿行公开代码。
+*Codex | code-davinci-002 | 8001 | Codex 模型是基模型 GPT-3 的子代，可以理解和生成代码。 它们的训练数据包含自然语言和来自 GitHub 的数十亿行公开代码。
 
 
 在 APIGPT 中建立了一个 OpenAI App 后，你可以在你的应用程序中使用 OpenAI 的接口。
